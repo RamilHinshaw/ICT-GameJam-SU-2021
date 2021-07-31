@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 1f;
+
     private int position = 0;
 
     //jUMP
-    private const float FLOOR_HEIGHT = 4.465f;
+    [Header("Jump")]
     public float yVelocity = 0;
     public float jumpPower = 12;
     public float jumpSpeed = 1f;
     public float fallSpeed = 9.81f;
+    private const float FLOOR_HEIGHT = 4.465f;
+
+
+    //Acceleration
+    [Header("Acceleration")]
+    public float currentSpeed = 0;
+    public float topSpeed = 3f;
+    public float acceleration = 0.5f;
+    public float accelerationReduction = 0.33f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,13 +36,34 @@ public class PlayerController : MonoBehaviour
     {
         //if (Input.GetButtonDown("Forward"))
         //{
-            transform.Translate(transform.forward * speed * Time.deltaTime);
+            
         //}
 
+        Movement();
         ChangeLanes();
         Jump();
 
 
+    }
+
+    private void Movement()
+    {
+        if (currentSpeed < topSpeed)
+            currentSpeed += acceleration * Time.deltaTime;
+
+        transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
+    }
+
+    private void Ability()
+    {
+        //Shield
+        //Arrow
+        //Slash
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Lose Speed
     }
 
     private void Jump()
