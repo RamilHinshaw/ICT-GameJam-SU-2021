@@ -5,11 +5,19 @@ using Enums;
 
 public class TrackGenerator : MonoBehaviour
 {
+    const float CENTER_SPAWN = 4.257f;
+    const float LEFT_SPAWN = CENTER_SPAWN - 1;
+    const float RIGHT_SPAWN = CENTER_SPAWN + 1;
+    const float START_SPAWN_Z = -1f;
+
     [SerializeField] public List<Segment> segments = new List<Segment>(); //SEGMENT SETTINGS
 
     public List<Segment> generatedTrack = new List<Segment>();
 
     public List<GameObject> obstaclePrefabs = new List<GameObject>();
+
+    public GameObject trackObj;
+    public GameObject endZone;
 
     // Start is called before the first frame update
     void Start()
@@ -43,10 +51,7 @@ public class TrackGenerator : MonoBehaviour
       
             for (int j = 0; j < track[i].lanes.Count; j++)
             {
-                const float CENTER_SPAWN = 4.257f;
-                const float LEFT_SPAWN = CENTER_SPAWN - 1;
-                const float RIGHT_SPAWN = CENTER_SPAWN + 1;
-                const float START_SPAWN_Z = -1f;
+
 
                 //Spawn for this lane
 
@@ -65,6 +70,15 @@ public class TrackGenerator : MonoBehaviour
                 zSpawnOffset += track[i].spaceBetweenLanes;
 
             }
+
         }
+
+
+        //Stretch Track
+        zSpawnOffset += 15f;
+        trackObj.transform.localScale = new Vector3(trackObj.transform.localScale.x, trackObj.transform.localScale.y, zSpawnOffset);
+
+        //END ZONE
+        Instantiate(endZone, new Vector3(CENTER_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset + 5), Quaternion.identity);
     }
 }

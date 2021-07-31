@@ -26,14 +26,14 @@ public class PlayerController : MonoBehaviour
 
     [Header("Arrow")]
     public float arrowCD = 1.0f;
-    private float arrowCurrentCD = 0.50f;
+    public float arrowCurrentCD = 0.50f;
     private int arrowCount = 5;
     public int arrowMaxCount = 5;
 
     [Header("Shield")]
     public GameObject shieldOBJ;
     public float shieldCD = 5.0f;
-    private float shieldCurrentCD = 0;
+    public float shieldCurrentCD = 0;
     public float shieldMaxDuration = 5f;
     private float shieldDuration;
     private bool shieldOn;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     [Header("Slash")]
     public GameObject slashObj;
     public float slashCD = 1.0f;
-    private float slashCurrentCD = 0.50f;
+    public float slashCurrentCD = 0.50f;
 
     [Header("OTHER")]
     public GameObject spawner;
