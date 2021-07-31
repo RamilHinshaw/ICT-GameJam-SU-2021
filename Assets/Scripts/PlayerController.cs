@@ -49,11 +49,17 @@ public class PlayerController : MonoBehaviour
         transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
     }
 
-    private void Ability()
+    private void Abilities()
     {
         //Shield
-        //Arrow
+
         //Slash
+
+        //Arrow
+        if (Input.GetButtonDown("Arrow"))
+        {
+            //Instanstiate Arrow infront
+        }
     }
 
     private void OnTriggerEnter(Collider other)
