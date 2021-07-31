@@ -11,9 +11,10 @@ public class Segment
     [SerializeField] public float spaceBetweenLanes = 4f;
 
 
-    public Segment( List<Lane> _lanes)
+    public Segment( List<Lane> _lanes, float _spaceBetweenLanes)
     {
         lanes = _lanes;
+        spaceBetweenLanes = _spaceBetweenLanes;
     }
 
     public Lane RandomLane(System.Random random)
