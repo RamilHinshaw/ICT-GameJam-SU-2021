@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public class Slash : MonoBehaviour
 {
-    public float lifeTime = 5f;
-    public float speed = 4f;
-    public bool piercing = false;
+    public float lifeTime = 0.5f;
+    private float currentLifeTime;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(transform.forward * speed * Time.deltaTime);
 
-        lifeTime -= Time.deltaTime;
+        currentLifeTime -= Time.deltaTime;
 
-        if (lifeTime <= 0)
-            Destroy(gameObject);
+        if (currentLifeTime <= 0)
+            gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        currentLifeTime = lifeTime;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,11 +31,8 @@ public class Arrow : MonoBehaviour
             if (script.obstacleType == Obstacle.ObstacleType.Enemies || script.obstacleType == Obstacle.ObstacleType.Rock)
             {
                 Destroy(other.gameObject);
-
-                if (piercing == false)
-                    Destroy(gameObject);
             }
-                
+
         }
     }
 }

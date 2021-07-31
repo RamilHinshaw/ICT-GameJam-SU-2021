@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Arrow")]
     public float arrowCD = 1.0f;
-    private float arrowCurrentCD = 5.0f;
+    private float arrowCurrentCD = 0.50f;
     private int arrowCount = 5;
     public int arrowMaxCount = 5;
 
@@ -36,6 +36,11 @@ public class PlayerController : MonoBehaviour
     public float shieldMaxDuration = 5f;
     private float shieldDuration;
     private bool shieldOn;
+
+    [Header("Slash")]
+    public GameObject slashObj;
+    public float slashCD = 1.0f;
+    private float slashCurrentCD = 0.50f;
 
     [Header("OTHER")]
     public GameObject spawner;
@@ -62,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
         Shield();
         Arrow();
+        Slash();
 
     }
 
@@ -71,6 +77,21 @@ public class PlayerController : MonoBehaviour
             currentSpeed += acceleration * Time.deltaTime;
 
         transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
+    }
+
+    private void Slash()
+    {
+        //Slash
+        if (Input.GetButtonDown("Slash") && slashCurrentCD <= 0)
+        {
+            slashObj.SetActive(true);
+
+            slashCurrentCD = slashCD;
+        }
+
+        //Cooldowns
+        if (slashCurrentCD > 0)
+            slashCurrentCD -= Time.deltaTime;
     }
 
     private void Shield()
@@ -105,17 +126,18 @@ public class PlayerController : MonoBehaviour
     private void Arrow()
     {
 
-
-        //Slash
-
         //Arrow
-        if (Input.GetButtonDown("Arrow"))
+        if (Input.GetButtonDown("Arrow") && arrowCurrentCD <= 0 && arrowCount > 0)
         {
             //Instastiate Arrow infront
             Instantiate(arrow, spawner.transform.position, spawner.transform.rotation);
+            arrowCurrentCD = arrowCD;
+            arrowCount--;
         }
 
-
+        //Cooldowns
+        if (arrowCurrentCD > 0)
+            arrowCurrentCD -= Time.deltaTime;
 
     }
 
