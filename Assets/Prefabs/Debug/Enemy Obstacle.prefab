@@ -303,4 +303,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29216a8c490d575409cc3f5f9b70384b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 1
+  obstacleType: 2

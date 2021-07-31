@@ -144,13 +144,24 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (shieldOn) return;
 
         //Lose Speed
         if (other.CompareTag("Obstacle"))
         {
+
             //print("HIT!");
-            currentSpeed -= accelerationReduction;
+
+            if (shieldOn == false)
+                currentSpeed -= accelerationReduction;
+
+            else
+            {
+                //if sheild but touch hole still slow down
+                var script = other.GetComponent<Obstacle>();
+
+                if (script.obstacleType == ObstacleType.Hole)
+                    currentSpeed -= accelerationReduction;
+            }
 
             if (currentSpeed < 0)
                 currentSpeed = 0;

@@ -28,7 +28,7 @@ public class Slash : MonoBehaviour
         {
             var script = other.GetComponent<Obstacle>();
 
-            if (script.obstacleType == Enums.ObstacleType.Enemies || script.obstacleType == Enums.ObstacleType.Rock)
+            if (script.obstacleType == Enums.ObstacleType.Enemies || script.obstacleType == Enums.ObstacleType.Web)
             {
                 Destroy(other.gameObject);
             }

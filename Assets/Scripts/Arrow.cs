@@ -32,6 +32,11 @@ public class Arrow : MonoBehaviour
                 if (piercing == false)
                     Destroy(gameObject);
             }
+
+            else if (script.obstacleType == Enums.ObstacleType.Web && piercing == false)
+            {
+                Destroy(gameObject);
+            }
                 
         }
     }
