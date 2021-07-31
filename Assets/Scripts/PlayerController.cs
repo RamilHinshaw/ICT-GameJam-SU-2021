@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     public GameObject arrow;
     public float laneSwapSpeed = 5f;
     private bool usedMovementLastTime = false;
+    private bool isDisabled = false;
 
 
 
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDisabled) return;
 
         Movement();
         ChangeLanes();
@@ -165,6 +167,12 @@ public class PlayerController : MonoBehaviour
 
             if (currentSpeed < 0)
                 currentSpeed = 0;
+        }
+
+        if (other.CompareTag("End"))
+        {
+            isDisabled = true;
+            GameManager.Instance.GuiManager.StartEndScreen();
         }
     }
 

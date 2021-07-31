@@ -16,4 +16,9 @@ public class GuiManager : MonoBehaviour
         
     }
 
+    public void StartEndScreen()
+    {
+
+    }
+
 }
