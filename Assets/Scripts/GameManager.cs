@@ -33,18 +33,17 @@ public class GameManager : MonoBehaviour
 
     //MANAGERS HERE    
     public GuiManager GuiManager;
-    public TaskManager TaskManager;
+
 
     private void Start()
     {
-        //GuiManager.Start();
-        //TaskManager.Start();
+
     }
 
     private void Update()
     {
         GuiManager.Update();
-        TaskManager.Update();
+
     }
 
 }
