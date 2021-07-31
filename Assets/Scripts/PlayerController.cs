@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public float accelerationReduction = 0.33f;
 
 
+    private bool usedMovementLastTime = false;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -98,20 +101,32 @@ public class PlayerController : MonoBehaviour
 
     private void ChangeLanes()
     {
-        if (Input.GetButtonDown("Horizontal"))
-        {
-            if (Input.GetAxisRaw("Horizontal") > 0 && position != 1)
+ 
+            if (Input.GetAxisRaw("Horizontal") > 0 && position != 1 && usedMovementLastTime == false)
             {
                 transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
                 position++;
+                usedMovementLastTime = true;
             }
 
-            else if (Input.GetAxisRaw("Horizontal") < 0 && position != -1)
+            else if (Input.GetAxisRaw("Horizontal") < 0 && position != -1 && usedMovementLastTime == false)
             {
                 transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
                 position--;
+                usedMovementLastTime = true;
             }
-        }
 
+        if (isHorizontalUsed() == false)
+            usedMovementLastTime = false;
+        
+
+    }
+
+    private bool isHorizontalUsed()
+    {
+        if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0f)
+            return true;
+
+        return false;
     }
 }
