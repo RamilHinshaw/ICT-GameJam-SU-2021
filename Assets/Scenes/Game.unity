@@ -2628,10 +2628,10 @@ MonoBehaviour:
   arrowCD: 1
   arrowMaxCount: 5
   shieldOBJ: {fileID: 1877658766}
-  shieldCD: 5
-  shieldMaxDuration: 5
+  shieldCD: 7
+  shieldMaxDuration: 1
   slashObj: {fileID: 677487171}
-  slashCD: 1
+  slashCD: 3
   spawner: {fileID: 1236431280}
   arrow: {fileID: 3435391636580323764, guid: ec9c2b74a0dc32040b0dc09688273eb0, type: 3}
   laneSwapSpeed: 5
