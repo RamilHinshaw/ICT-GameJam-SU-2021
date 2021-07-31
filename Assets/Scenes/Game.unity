@@ -1280,9 +1280,9 @@ MonoBehaviour:
   yVelocity: 0
   jumpPower: 3.2
   jumpSpeed: 1
-  fallSpeed: 9.3
+  fallSpeed: 11
   currentSpeed: 0
-  topSpeed: 3
+  topSpeed: 4.5
   acceleration: 0.5
   accelerationReduction: 0.33
   arrowCD: 0
@@ -1462,7 +1462,7 @@ MonoBehaviour:
     - left: 0
       middle: 2
       right: 3
-      weight: 1
+      weight: 5
       randomize: 1
     - left: 4
       middle: 2
@@ -1477,7 +1477,7 @@ MonoBehaviour:
     - left: 4
       middle: 2
       right: 3
-      weight: 3
+      weight: 5
       randomize: 1
     - left: 2
       middle: 2
@@ -1487,14 +1487,14 @@ MonoBehaviour:
     - left: 2
       middle: 2
       right: 3
-      weight: 4
+      weight: 2
       randomize: 1
     - left: 2
       middle: 2
       right: 2
-      weight: 5
+      weight: 3
       randomize: 1
-    numberOfLanes: 50
+    numberOfLanes: 10
     spaceBetweenLanes: 3
   - name: Hard
     lanes:
@@ -1528,7 +1528,7 @@ MonoBehaviour:
       right: 1
       weight: 2
       randomize: 1
-    numberOfLanes: 3
+    numberOfLanes: 0
     spaceBetweenLanes: 4
   - name: Easy
     lanes:
@@ -1614,7 +1614,7 @@ MonoBehaviour:
     - left: 0
       middle: 2
       right: 3
-      weight: 1
+      weight: 5
       randomize: 1
     - left: 4
       middle: 2
@@ -1629,7 +1629,7 @@ MonoBehaviour:
     - left: 4
       middle: 2
       right: 3
-      weight: 3
+      weight: 5
       randomize: 1
     - left: 2
       middle: 2
@@ -1639,14 +1639,14 @@ MonoBehaviour:
     - left: 2
       middle: 2
       right: 3
-      weight: 4
+      weight: 2
       randomize: 1
     - left: 2
       middle: 2
       right: 2
-      weight: 5
+      weight: 3
       randomize: 1
-    numberOfLanes: 6
+    numberOfLanes: 10
     spaceBetweenLanes: 3
   generatedTrack: []
   obstaclePrefabs:
@@ -2290,7 +2290,7 @@ MonoBehaviour:
     - left: 0
       middle: 2
       right: 3
-      weight: 1
+      weight: 5
       randomize: 1
     - left: 4
       middle: 2
@@ -2305,7 +2305,7 @@ MonoBehaviour:
     - left: 4
       middle: 2
       right: 3
-      weight: 3
+      weight: 5
       randomize: 1
     - left: 2
       middle: 2
@@ -2315,12 +2315,12 @@ MonoBehaviour:
     - left: 2
       middle: 2
       right: 3
-      weight: 4
+      weight: 2
       randomize: 1
     - left: 2
       middle: 2
       right: 2
-      weight: 5
+      weight: 3
       randomize: 1
     numberOfLanes: 10
     spaceBetweenLanes: 3
