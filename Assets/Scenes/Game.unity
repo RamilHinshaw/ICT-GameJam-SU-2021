@@ -701,13 +701,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0.16013062, y: -0.68899995, z: 0.16068456, w: -0.6883442}
-  m_LocalPosition: {x: -1.8370003, y: 1.1989999, z: 0.06887889}
+  m_LocalRotation: {x: -0.100664526, y: -0.7001641, z: 0.101272404, w: -0.6995576}
+  m_LocalPosition: {x: -1.26, y: 0.64, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1200470071}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 26.223, y: -179.954, z: -0.035}
+  m_LocalEulerAnglesHint: {x: 16.419, y: -269.957, z: -0.044}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,7 +1491,7 @@ MonoBehaviour:
       right: 2
       weight: 5
       randomize: 1
-    numberOfLanes: 10
+    numberOfLanes: 4
     spaceBetweenLanes: 3
   - name: Hard
     lanes:
@@ -1525,7 +1525,125 @@ MonoBehaviour:
       right: 1
       weight: 2
       randomize: 1
+    numberOfLanes: 3
+    spaceBetweenLanes: 3
+  - name: Easy
+    lanes:
+    - left: 0
+      middle: 0
+      right: 0
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 4
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 4
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 4
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 1
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 2
+      weight: 5
+      randomize: 1
     numberOfLanes: 10
+    spaceBetweenLanes: 3
+  - name: Medium
+    lanes:
+    - left: 0
+      middle: 2
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 3
+      weight: 4
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 2
+      weight: 5
+      randomize: 1
+    numberOfLanes: 6
     spaceBetweenLanes: 3
   generatedTrack: []
   obstaclePrefabs:
