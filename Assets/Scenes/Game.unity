@@ -666,6 +666,114 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174971194}
   m_CullTransparentMesh: 0
+--- !u!1 &184688372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184688373}
+  - component: {fileID: 184688374}
+  m_Layer: 0
+  m_Name: _TRACK GENERATOR TUT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &184688373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184688372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.473055, y: -6.0877314, z: 84.64469}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2042216069}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184688374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184688372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc1a6f5ec7442f42ac086f1c62b5601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segments:
+  - name: Movement
+    lanes:
+    - left: 0
+      middle: 0
+      right: 0
+      weight: 5
+      randomize: 1
+    numberOfLanes: 4
+    spaceBetweenLanes: 4
+  - name: Jump
+    lanes:
+    - left: 4
+      middle: 4
+      right: 4
+      weight: 1
+      randomize: 1
+    numberOfLanes: 4
+    spaceBetweenLanes: 4
+  - name: Slash
+    lanes:
+    - left: 2
+      middle: 2
+      right: 2
+      weight: 1
+      randomize: 1
+    - left: 1
+      middle: 1
+      right: 1
+      weight: 1
+      randomize: 1
+    numberOfLanes: 4
+    spaceBetweenLanes: 10
+  - name: Arrow
+    lanes:
+    - left: 3
+      middle: 3
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 2
+      weight: 1
+      randomize: 1
+    numberOfLanes: 4
+    spaceBetweenLanes: 10
+  - name: Shield
+    lanes:
+    - left: 1
+      middle: 2
+      right: 3
+      weight: 2
+      randomize: 1
+    numberOfLanes: 2
+    spaceBetweenLanes: 30
+  generatedTrack: []
+  obstaclePrefabs:
+  - {fileID: 0}
+  - {fileID: 9209422220528723391, guid: 3ddf116594bafae438b66dd055d152f8, type: 3}
+  - {fileID: 4811040649964466026, guid: 241c9ccc0f0c2db4e9f2847223fd1e36, type: 3}
+  - {fileID: 5181330617832294155, guid: f04fc5f94b7f16b4ca96d606980293e3, type: 3}
+  - {fileID: 5112574338206514550, guid: d75aab23cbc12fb4bb4db6d238aca4bc, type: 3}
+  trackObj: {fileID: 1225252363}
+  endZone: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
 --- !u!1 &245453218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,20 +1759,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yVelocity: 0
-  jumpPower: 3.2
+  jumpPower: 3
   jumpSpeed: 1
-  fallSpeed: 11
+  fallSpeed: 12
   currentSpeed: 0
   topSpeed: 4.5
-  acceleration: 0.5
+  acceleration: 1
   accelerationReduction: 0.33
   arrowCD: 0
   arrowCurrentCD: 0.5
   arrowMaxCount: 5
   shieldOBJ: {fileID: 1877658766}
-  shieldCD: 4
+  shieldCD: 5
   shieldCurrentCD: 0
-  shieldMaxDuration: 1
+  shieldMaxDuration: 0.5
   slashObj: {fileID: 677487171}
   slashCD: 1.5
   slashCurrentCD: 0.5
@@ -1737,7 +1845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1205872329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1819,7 +1927,7 @@ MonoBehaviour:
       weight: 5
       randomize: 1
     numberOfLanes: 10
-    spaceBetweenLanes: 3
+    spaceBetweenLanes: 4
   - name: Medium
     lanes:
     - left: 0
@@ -1868,7 +1976,7 @@ MonoBehaviour:
       weight: 3
       randomize: 1
     numberOfLanes: 10
-    spaceBetweenLanes: 3
+    spaceBetweenLanes: 4
   - name: Hard
     lanes:
     - left: 3
@@ -1971,7 +2079,7 @@ MonoBehaviour:
       weight: 5
       randomize: 1
     numberOfLanes: 10
-    spaceBetweenLanes: 3
+    spaceBetweenLanes: 4
   - name: Medium
     lanes:
     - left: 0
@@ -2020,7 +2128,7 @@ MonoBehaviour:
       weight: 3
       randomize: 1
     numberOfLanes: 10
-    spaceBetweenLanes: 3
+    spaceBetweenLanes: 4
   generatedTrack: []
   obstaclePrefabs:
   - {fileID: 0}
@@ -3072,6 +3180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1205872330}
+  - {fileID: 184688373}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
