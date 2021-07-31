@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Enums;
 
 public class PlayerController : MonoBehaviour
 {
@@ -182,7 +183,7 @@ public class PlayerController : MonoBehaviour
 
     private void ChangeLanes()
     {
-        print(Input.GetAxisRaw("Horizontal"));
+        //print(Input.GetAxisRaw("Horizontal"));
 
         Vector3 targetLane = transform.position;
 

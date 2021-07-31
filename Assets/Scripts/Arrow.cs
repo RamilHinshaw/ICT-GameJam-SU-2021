@@ -25,7 +25,7 @@ public class Arrow : MonoBehaviour
         {
             var script = other.GetComponent<Obstacle>();
 
-            if (script.obstacleType == Obstacle.ObstacleType.Enemies || script.obstacleType == Obstacle.ObstacleType.Rock)
+            if (script.obstacleType == Enums.ObstacleType.Enemies || script.obstacleType == Enums.ObstacleType.Rock)
             {
                 Destroy(other.gameObject);
 
