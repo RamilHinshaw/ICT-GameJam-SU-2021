@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Segment
 {
+    [SerializeField] public string name;
     [SerializeField] public List<Lane> lanes = new List<Lane>();
     [SerializeField] public int numberOfLanes = 5;
     [SerializeField] public float spaceBetweenLanes = 4f;

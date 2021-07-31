@@ -3363,7 +3363,7 @@ MonoBehaviour:
     - left: 2
       middle: 0
       right: 0
-      weight: 10
+      weight: 600
       randomize: 1
     - left: 2
       middle: 2
@@ -3374,13 +3374,13 @@ MonoBehaviour:
       middle: 0
       right: 0
       weight: 3
-      randomize: 1
+      randomize: 0
     - left: 2
       middle: 3
       right: 3
       weight: 2
-      randomize: 1
-    numberOfLanes: 5
+      randomize: 0
+    numberOfLanes: 10
     spaceBetweenLanes: 3
   generatedTrack: []
 --- !u!4 &1907705172

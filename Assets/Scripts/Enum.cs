@@ -7,7 +7,9 @@ namespace Enums
         Web,
         Enemies,
         Rock,
-        Hole
+        Hole,
+        Arrow,
+        Treasure
     }
 }
 

@@ -11,6 +11,7 @@ public class Lane
         right = (ObstacleType) _right;
     }
 
+    //[SerializeField] public string name;
     [SerializeField] public ObstacleType left = ObstacleType.NULL;
     [SerializeField] public ObstacleType middle = ObstacleType.NULL;
     [SerializeField] public ObstacleType right = ObstacleType.NULL;
