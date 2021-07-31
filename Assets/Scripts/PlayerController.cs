@@ -149,7 +149,10 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             //print("HIT!");
-            currentSpeed -= currentSpeed * accelerationReduction;
+            currentSpeed -= accelerationReduction;
+
+            if (currentSpeed < 0)
+                currentSpeed = 0;
         }
     }
 
