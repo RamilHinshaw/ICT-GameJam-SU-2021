@@ -23,6 +23,20 @@ public class PlayerController : MonoBehaviour
     public float acceleration = 0.5f;
     public float accelerationReduction = 0.33f;
 
+    [Header("Arrow")]
+    public float arrowCD = 1.0f;
+    private float arrowCurrentCD = 5.0f;
+    private int arrowCount = 5;
+    public int arrowMaxCount = 5;
+
+    [Header("Shield")]
+    public GameObject shieldOBJ;
+    public float shieldCD = 5.0f;
+    private float shieldCurrentCD = 5.0f;
+    public float shieldMaxDuration = 5f;
+    private float shieldDuration;
+    private bool shieldOn;
+
     [Header("OTHER")]
     public GameObject spawner;
     public GameObject arrow;
@@ -34,7 +48,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        arrowCount = arrowMaxCount;
+        shieldDuration = shieldMaxDuration;
     }
 
     // Update is called once per frame
@@ -45,7 +60,8 @@ public class PlayerController : MonoBehaviour
         ChangeLanes();
         Jump();
 
-        Abilities();
+        Shield();
+        Arrow();
 
     }
 
@@ -57,9 +73,38 @@ public class PlayerController : MonoBehaviour
         transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
     }
 
-    private void Abilities()
+    private void Shield()
     {
         //Shield
+        if (Input.GetButtonDown("Shield") && shieldCurrentCD <= 0)
+        {
+            print("SHIELD!");
+            //Show shield
+            shieldOBJ.SetActive(true);
+            shieldOn = true;
+            shieldDuration = shieldMaxDuration;
+        }
+
+        if (shieldOn)
+        {
+            shieldDuration -= Time.deltaTime;
+
+            if (shieldDuration <= 0f)
+            {
+                shieldOn = false;
+                shieldOBJ.SetActive(false);
+                shieldCurrentCD = shieldCD;
+            }
+        }
+
+        //Cooldowns
+        if (shieldOn == false && shieldCurrentCD > 0)
+            shieldCurrentCD -= Time.deltaTime;
+    }
+
+    private void Arrow()
+    {
+
 
         //Slash
 
@@ -69,10 +114,15 @@ public class PlayerController : MonoBehaviour
             //Instastiate Arrow infront
             Instantiate(arrow, spawner.transform.position, spawner.transform.rotation);
         }
+
+
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (shieldOn) return;
+
         //Lose Speed
         if (other.CompareTag("Obstacle"))
         {
@@ -107,6 +157,8 @@ public class PlayerController : MonoBehaviour
 
     private void ChangeLanes()
     {
+        print(Input.GetAxisRaw("Horizontal"));
+
         Vector3 targetLane = transform.position;
 
 
