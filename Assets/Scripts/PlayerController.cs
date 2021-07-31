@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     [Header("Shield")]
     public GameObject shieldOBJ;
     public float shieldCD = 5.0f;
-    private float shieldCurrentCD = 5.0f;
+    private float shieldCurrentCD = 0;
     public float shieldMaxDuration = 5f;
     private float shieldDuration;
     private bool shieldOn;
