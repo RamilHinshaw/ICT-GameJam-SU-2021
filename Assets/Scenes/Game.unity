@@ -1285,13 +1285,16 @@ MonoBehaviour:
   topSpeed: 3
   acceleration: 0.5
   accelerationReduction: 0.33
-  arrowCD: 1
+  arrowCD: 0
+  arrowCurrentCD: 0.5
   arrowMaxCount: 5
   shieldOBJ: {fileID: 1877658766}
-  shieldCD: 7
+  shieldCD: 4
+  shieldCurrentCD: 0
   shieldMaxDuration: 1
   slashObj: {fileID: 677487171}
-  slashCD: 3
+  slashCD: 2
+  slashCurrentCD: 0.5
   spawner: {fileID: 1236431280}
   arrow: {fileID: 3435391636580323764, guid: ec9c2b74a0dc32040b0dc09688273eb0, type: 3}
   laneSwapSpeed: 5
