@@ -1293,7 +1293,7 @@ MonoBehaviour:
   shieldCurrentCD: 0
   shieldMaxDuration: 1
   slashObj: {fileID: 677487171}
-  slashCD: 2
+  slashCD: 1.5
   slashCurrentCD: 0.5
   spawner: {fileID: 1236431280}
   arrow: {fileID: 3435391636580323764, guid: ec9c2b74a0dc32040b0dc09688273eb0, type: 3}
@@ -1494,7 +1494,7 @@ MonoBehaviour:
       right: 2
       weight: 5
       randomize: 1
-    numberOfLanes: 4
+    numberOfLanes: 50
     spaceBetweenLanes: 3
   - name: Hard
     lanes:
@@ -1529,7 +1529,7 @@ MonoBehaviour:
       weight: 2
       randomize: 1
     numberOfLanes: 3
-    spaceBetweenLanes: 3
+    spaceBetweenLanes: 4
   - name: Easy
     lanes:
     - left: 0
