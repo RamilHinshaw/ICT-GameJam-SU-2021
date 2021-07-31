@@ -90,11 +90,14 @@ public class PlayerController : MonoBehaviour
             slashObj.SetActive(true);
 
             slashCurrentCD = slashCD;
+            Stats.slashUsed++;
         }
 
         //Cooldowns
         if (slashCurrentCD > 0)
             slashCurrentCD -= Time.deltaTime;
+
+        
     }
 
     private void Shield()
@@ -107,6 +110,7 @@ public class PlayerController : MonoBehaviour
             shieldOBJ.SetActive(true);
             shieldOn = true;
             shieldDuration = shieldMaxDuration;
+            Stats.shieldUsed++;
         }
 
         if (shieldOn)
@@ -124,6 +128,8 @@ public class PlayerController : MonoBehaviour
         //Cooldowns
         if (shieldOn == false && shieldCurrentCD > 0)
             shieldCurrentCD -= Time.deltaTime;
+
+        
     }
 
     private void Arrow()
@@ -136,12 +142,16 @@ public class PlayerController : MonoBehaviour
             Instantiate(arrow, spawner.transform.position, spawner.transform.rotation);
             arrowCurrentCD = arrowCD;
             arrowCount--;
+
+            Stats.arrowsUsed++;
         }
 
         //Cooldowns
         if (arrowCurrentCD > 0)
             arrowCurrentCD -= Time.deltaTime;
 
+        //if (GameManager.Instance.isCSVLogging)
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -154,7 +164,10 @@ public class PlayerController : MonoBehaviour
             //print("HIT!");
 
             if (shieldOn == false)
+            {
                 currentSpeed -= accelerationReduction;
+                Stats.hitObstacles++;
+            }
 
             else
             {
@@ -162,7 +175,10 @@ public class PlayerController : MonoBehaviour
                 var script = other.GetComponent<Obstacle>();
 
                 if (script.obstacleType == ObstacleType.Hole)
+                {
                     currentSpeed -= accelerationReduction;
+                    Stats.hitObstacles++;
+                }
             }
 
             if (currentSpeed < 0)

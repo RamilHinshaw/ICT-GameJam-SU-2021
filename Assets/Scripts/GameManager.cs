@@ -31,13 +31,21 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public bool isCSVLogging = false;
+
     //MANAGERS HERE    
     public GuiManager GuiManager;
 
 
     private void Start()
     {
-
+        Stats.hitObstacles = 0;
+        Stats.arrowsUsed = 0;
+        Stats.slashUsed = 0;
+        Stats.shieldUsed = 0;
+        Stats.arrowsHit = 0;
+        Stats.slashHit = 0;
+        Stats.shieldHit = 0;
     }
 
     private void Update()

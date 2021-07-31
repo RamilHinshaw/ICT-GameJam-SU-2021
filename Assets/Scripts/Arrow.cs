@@ -28,6 +28,7 @@ public class Arrow : MonoBehaviour
             if (script.obstacleType == Enums.ObstacleType.Enemies || script.obstacleType == Enums.ObstacleType.Rock)
             {
                 Destroy(other.gameObject);
+                Stats.arrowsHit++;
 
                 if (piercing == false)
                     Destroy(gameObject);

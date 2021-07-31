@@ -14,6 +14,7 @@ public class Shield : MonoBehaviour
                 script.obstacleType == Enums.ObstacleType.Web ||
                 script.obstacleType == Enums.ObstacleType.Rock)
             {
+                Stats.shieldHit++;
                 Destroy(other.gameObject);
             }
           
