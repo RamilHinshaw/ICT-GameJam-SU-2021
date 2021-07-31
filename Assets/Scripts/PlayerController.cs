@@ -23,7 +23,10 @@ public class PlayerController : MonoBehaviour
     public float acceleration = 0.5f;
     public float accelerationReduction = 0.33f;
 
-
+    [Header("OTHER")]
+    public GameObject spawner;
+    public GameObject arrow;
+    public float laneSwapSpeed = 5f;
     private bool usedMovementLastTime = false;
 
 
@@ -41,6 +44,8 @@ public class PlayerController : MonoBehaviour
         Movement();
         ChangeLanes();
         Jump();
+
+        Abilities();
 
     }
 
@@ -61,7 +66,8 @@ public class PlayerController : MonoBehaviour
         //Arrow
         if (Input.GetButtonDown("Arrow"))
         {
-            //Instanstiate Arrow infront
+            //Instastiate Arrow infront
+            Instantiate(arrow, spawner.transform.position, spawner.transform.rotation);
         }
     }
 
@@ -101,24 +107,29 @@ public class PlayerController : MonoBehaviour
 
     private void ChangeLanes()
     {
- 
-            if (Input.GetAxisRaw("Horizontal") > 0 && position != 1 && usedMovementLastTime == false)
-            {
-                transform.position = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-                position++;
-                usedMovementLastTime = true;
-            }
+        Vector3 targetLane = transform.position;
 
-            else if (Input.GetAxisRaw("Horizontal") < 0 && position != -1 && usedMovementLastTime == false)
-            {
-                transform.position = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-                position--;
-                usedMovementLastTime = true;
-            }
+
+        if (Input.GetAxisRaw("Horizontal") > 0 && position != 1 && usedMovementLastTime == false)
+        {
+            targetLane = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+            position++;
+            usedMovementLastTime = true;
+        }
+
+        else if (Input.GetAxisRaw("Horizontal") < 0 && position != -1 && usedMovementLastTime == false)
+        {
+            targetLane = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+            position--;
+            usedMovementLastTime = true;
+        }
 
         if (isHorizontalUsed() == false)
             usedMovementLastTime = false;
-        
+
+
+        //transform.position = Vector3.Lerp(transform.position, targetLane, laneSwapSpeed * Time.deltaTime);
+        transform.position = targetLane;
 
     }
 
