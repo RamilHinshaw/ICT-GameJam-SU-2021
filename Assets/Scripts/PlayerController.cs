@@ -34,15 +34,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetButtonDown("Forward"))
-        //{
-            
-        //}
 
         Movement();
         ChangeLanes();
         Jump();
-
 
     }
 
@@ -64,13 +59,18 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Lose Speed
+        if (other.CompareTag("Obstacle"))
+        {
+            //print("HIT!");
+            currentSpeed -= currentSpeed * accelerationReduction;
+        }
     }
 
     private void Jump()
     {
         if (transform.position.y <= FLOOR_HEIGHT && Input.GetButtonDown("Jump"))
         {
-            Debug.Log("JUMP!");
+            //Debug.Log("JUMP!");
             //Jump
             yVelocity = jumpPower;
         }
