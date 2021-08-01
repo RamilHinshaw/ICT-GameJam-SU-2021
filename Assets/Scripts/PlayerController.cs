@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
                 //if sheild but touch hole still slow down
                 var script = other.GetComponent<Obstacle>();
 
-                if (script.obstacleType == ObstacleType.Hole)
+                if (script.obstacleType == ObstacleType.Log)
                 {
                     currentSpeed -= accelerationReduction;
                     Stats.hitObstacles++;

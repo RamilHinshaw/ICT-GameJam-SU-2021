@@ -17,6 +17,7 @@ public class TrackGenerator : MonoBehaviour
     public List<GameObject> obstaclePrefabs = new List<GameObject>();
 
     public GameObject trackObj;
+    public Renderer trackRend;
     public GameObject endZone;
 
     // Start is called before the first frame update
@@ -80,5 +81,10 @@ public class TrackGenerator : MonoBehaviour
 
         //END ZONE
         Instantiate(endZone, new Vector3(CENTER_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset + 5), Quaternion.identity);
+
+        //Adjust Track Texture
+        Material mat = trackRend.material;
+        mat.SetTextureScale("_MainTex", new Vector2(5, zSpawnOffset + zSpawnOffset * 0.15f) );
+        print(zSpawnOffset);
     }
 }
