@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
     [Header("OTHER")]
     public GameObject spawner;
     public GameObject arrow;
+    public int health = 3;
     public float laneSwapSpeed = 5f;
     private bool usedMovementLastTime = false;
     private bool isDisabled = false;
@@ -60,6 +61,10 @@ public class PlayerController : MonoBehaviour
     {
         arrowCount = arrowMaxCount;
         shieldDuration = shieldMaxDuration;
+
+        GameManager.Instance.GuiManager.SetupSliders(shieldCD, arrowCD, slashCD);
+        GameManager.Instance.GuiManager.UpdateHealth(health);
+        GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
     }
 
     // Update is called once per frame
@@ -77,6 +82,13 @@ public class PlayerController : MonoBehaviour
 
         anim_knight.speed = anim_mage.speed = anim_ranger.speed = currentSpeed * .5f;
 
+        UpdateProgressGUI();
+
+    }
+
+    private void UpdateProgressGUI()
+    {
+        GameManager.Instance.GuiManager.UpdateSliders(shieldCD-shieldCurrentCD, arrowCD-arrowCurrentCD, slashCD-slashCurrentCD);
     }
 
     private void Movement()
@@ -97,6 +109,7 @@ public class PlayerController : MonoBehaviour
             slashCurrentCD = slashCD;
             Stats.slashUsed++;
 
+            anim_knight.speed = 1f;
             anim_knight.SetTrigger("slash");
         }
 
@@ -154,6 +167,7 @@ public class PlayerController : MonoBehaviour
 
             anim_ranger.SetTrigger("arrow");
             Stats.arrowsUsed++;
+            GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
         }
 
         //Cooldowns
@@ -179,9 +193,22 @@ public class PlayerController : MonoBehaviour
                 script.Explode();
                 Stats.hitObstacles++;
 
-                anim_knight.SetTrigger("hurt");
-                anim_mage.SetTrigger("hurt");
-                anim_ranger.SetTrigger("hurt");
+
+                if (health > 1)
+                {
+                    anim_knight.SetTrigger("hurt");
+                    anim_mage.SetTrigger("hurt");
+                    anim_ranger.SetTrigger("hurt");
+                }
+
+                else
+                    Death();
+
+
+                health--;
+                GameManager.Instance.GuiManager.UpdateHealth(health);
+
+
             }
 
             if (currentSpeed < 0)
@@ -258,6 +285,17 @@ public class PlayerController : MonoBehaviour
         //transform.position = Vector3.Lerp(transform.position, targetLane, laneSwapSpeed * Time.deltaTime);
         transform.position = targetLane;
 
+    }
+
+    private void Death()
+    {
+        GameManager.Instance.GuiManager.UpdateHealth(0);
+        anim_knight.speed = anim_mage.speed = anim_ranger.speed = .5f;
+
+        isDisabled = true;
+        anim_knight.SetTrigger("death");
+        anim_mage.SetTrigger("death");
+        anim_ranger.SetTrigger("death");
     }
 
     private bool isHorizontalUsed()

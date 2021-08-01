@@ -6,6 +6,9 @@ using System.IO;
 
 public class GuiManager : MonoBehaviour
 {
+    public Text health;
+    public Text arrowCount;
+    public Slider progress_mage, progress_ranger, progress_knight;
 
     public void Start()
     {
@@ -15,6 +18,34 @@ public class GuiManager : MonoBehaviour
     public void Update()
     {
         
+    }
+
+    public void UpdateArrows(int _arrows)
+    {
+        arrowCount.text = "x" + _arrows.ToString();
+    }
+
+    public void UpdateHealth(int _health)
+    {
+        health.text = _health.ToString();
+    }
+
+    public void SetupSliders(float mage, float ranger, float knight)
+    {
+        //Max size of sliders
+        progress_knight.maxValue = knight;
+        progress_mage.maxValue = mage;
+        progress_ranger.maxValue = ranger;
+
+        UpdateSliders(mage, ranger, knight);
+
+    }
+
+    public void UpdateSliders(float mage, float ranger, float knight)
+    {
+        progress_ranger.value = ranger;
+        progress_knight.value = knight;
+        progress_mage.value = mage;
     }
 
     public void StartEndScreen()
