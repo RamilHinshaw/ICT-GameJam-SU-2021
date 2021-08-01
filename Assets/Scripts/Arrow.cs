@@ -27,16 +27,20 @@ public class Arrow : MonoBehaviour
 
             if (script.obstacleType == Enums.ObstacleType.Enemies || script.obstacleType == Enums.ObstacleType.Rock)
             {
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
+                script.Explode();
                 Stats.arrowsHit++;
 
                 if (piercing == false)
+                {
                     Destroy(gameObject);
+                }
             }
 
             else if (script.obstacleType == Enums.ObstacleType.Web && piercing == false)
             {
-                Destroy(gameObject);
+                script.Explode();
+                // Destroy(gameObject);
             }
                 
         }

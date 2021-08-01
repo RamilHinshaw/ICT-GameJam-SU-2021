@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacleType: 1
+  particle: {fileID: 117385595450015299, guid: 3103c27a92a91ee4c8e75601ae56c0c8, type: 3}

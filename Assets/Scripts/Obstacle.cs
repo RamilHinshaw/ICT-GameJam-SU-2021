@@ -14,4 +14,11 @@ public class Obstacle : MonoBehaviour
     //}
 
     public ObstacleType obstacleType;
+    public GameObject particle;
+
+    public void Explode()
+    {
+        Destroy(gameObject);
+        Instantiate(particle, transform.position, transform.rotation);
+    }
 }
