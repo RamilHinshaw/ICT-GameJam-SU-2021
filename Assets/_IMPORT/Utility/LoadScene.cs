@@ -50,7 +50,7 @@ public class LoadScene : MonoBehaviour
 
     public void ToMainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void LoadThisScene(string _sceneName)

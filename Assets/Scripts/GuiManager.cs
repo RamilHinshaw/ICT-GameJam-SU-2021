@@ -9,6 +9,7 @@ public class GuiManager : MonoBehaviour
     public Text health;
     public Text arrowCount;
     public Slider progress_mage, progress_ranger, progress_knight;
+    public GameObject screen_death, screen_levelCompleted;
 
     public void Start()
     {
@@ -48,10 +49,18 @@ public class GuiManager : MonoBehaviour
         progress_mage.value = mage;
     }
 
-    public void StartEndScreen()
+    public void ShowCompleteScreen()
     {
         if (GameManager.Instance.isCSVLogging)
             WriteToCSV();
+
+        screen_levelCompleted.SetActive(true);
+
+    }
+
+    public void ShowDeathScreen()
+    {
+        screen_death.SetActive(true);
     }
 
     private void WriteToCSV()

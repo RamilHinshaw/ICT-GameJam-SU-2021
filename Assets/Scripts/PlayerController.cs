@@ -54,12 +54,24 @@ public class PlayerController : MonoBehaviour
 
     public Animator anim_knight, anim_mage, anim_ranger;
 
+    public bool resetPlayerStats = false;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        arrowCount = arrowMaxCount;
+        if (resetPlayerStats == false)
+        {
+            arrowCount = PlayerStats.arrowCount;
+            health = PlayerStats.playerHealth;
+        }
+
+        else
+        {
+            arrowCount = arrowMaxCount;
+        }
+
         shieldDuration = shieldMaxDuration;
 
         GameManager.Instance.GuiManager.SetupSliders(shieldCD, arrowCD, slashCD);
@@ -218,7 +230,12 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("End"))
         {
             isDisabled = true;
-            GameManager.Instance.GuiManager.StartEndScreen();
+            GameManager.Instance.GuiManager.ShowCompleteScreen();
+
+            //UpdatePlayer Stats
+            PlayerStats.playerHealth = health;
+            PlayerStats.arrowCount = arrowCount;
+
         }
     }
 
@@ -296,6 +313,8 @@ public class PlayerController : MonoBehaviour
         anim_knight.SetTrigger("death");
         anim_mage.SetTrigger("death");
         anim_ranger.SetTrigger("death");
+
+        GameManager.Instance.GuiManager.ShowDeathScreen();
     }
 
     private bool isHorizontalUsed()
