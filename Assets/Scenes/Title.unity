@@ -2430,7 +2430,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c4b0683f3b9678e4d8ef3769b6ba891f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.295355
+      value: -21.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c4b0683f3b9678e4d8ef3769b6ba891f,
         type: 3}
@@ -2440,7 +2440,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c4b0683f3b9678e4d8ef3769b6ba891f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.581
+      value: 4.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c4b0683f3b9678e4d8ef3769b6ba891f,
         type: 3}
@@ -2598,7 +2598,7 @@ GameObject:
   - component: {fileID: 478203836}
   - component: {fileID: 478203835}
   m_Layer: 5
-  m_Name: Credits Panel
+  m_Name: Instructions Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2619,10 +2619,10 @@ RectTransform:
   m_Father: {fileID: 575431593}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 622.07776, y: 364.5089}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -6.484375, y: 84.18381}
+  m_SizeDelta: {x: -63.8175, y: -229.9218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &478203835
 MonoBehaviour:
@@ -3314,8 +3314,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.6552124, y: 0}
-  m_SizeDelta: {x: -26.8048, y: -24.368}
+  m_AnchoredPosition: {x: -3.6552124, y: -0.52111816}
+  m_SizeDelta: {x: -26.8048, y: -23.3258}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &533006799
 MonoBehaviour:
@@ -3350,17 +3350,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Credits:
-
-
-    Ramil Hinshaw - Programmer
-
-    Adam Armijo - Level Designer/Analyst
-
-    Desiree
-    Hinshaw - 3D Modeling
-
-    Joe Mazzara - Music/Sfx'
+  m_Text: sdfdsfsdfsdfsd
 --- !u!222 &533006800
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4177,7 +4167,7 @@ GameObject:
   - component: {fileID: 626457340}
   - component: {fileID: 626457343}
   m_Layer: 5
-  m_Name: Credits
+  m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13203,7 +13193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Credits
+  m_Text: Instructions
 --- !u!222 &1317098765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13586,16 +13576,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2042216070}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadNextLevel
-        m_Mode: 1
+        m_MethodName: LoadThisScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Tutorial
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1507883878
@@ -16311,14 +16301,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2042216070}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadNextLevel
-        m_Mode: 1
+        m_MethodName: LoadThisScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2080177051

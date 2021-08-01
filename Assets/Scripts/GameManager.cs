@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 //GameManger is a singleton Monobehavior
 public class GameManager : MonoBehaviour
@@ -75,6 +76,11 @@ public class GameManager : MonoBehaviour
     {
         GuiManager.Update();
 
+
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
 }
