@@ -54628,7 +54628,7 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 0}
   - {fileID: 9114878346996964315, guid: 88dfbd1c2961de641b296d197a690c36, type: 3}
-  - {fileID: 5511763772724258918, guid: 91f27f61b9fb847419ccd127eb546bd9, type: 3}
+  - {fileID: 7858841264962249879, guid: 7ffa2cb2036cb7e4d9b5da568770cf51, type: 3}
   - {fileID: 6388939140754811867, guid: 4978b27ba5ee9e6498cf61716d1cd3c6, type: 3}
   - {fileID: 6192690515352653396, guid: 5d2bc67b09219f24cb349c2fb1b47972, type: 3}
   trackObj: {fileID: 1225252363}
