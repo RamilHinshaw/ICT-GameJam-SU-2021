@@ -3350,7 +3350,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: sdfdsfsdfsdfsd
+  m_Text: "The party is running for their life as you beat the dragon and stole the
+    treasure. Minions and obstacles are in your way as the party tries to escape!
+    \nYou have 10 health and need to avoid or use abilities to defeat obstacles in
+    your way.  \r\n\r\nAny obstacles hit will reduce health by 1\r\nTry your best
+    to avoid obstacles and use your abilities wisley as they are on cooldown and
+    can be used to destroy certain objects. \r\n\r\n\r\nMove joystick left to right
+    to move to different lanes\r\nA Party jumps to avoid fallen logs  \r\nB is the
+    knights slash that will destroy webbs and dragons. Use wisely as the knight will
+    need time to get her broadsword in position to swing again \nY archer shoots
+    arrows at dragons and targets. Use them wisely as you only have  5 \r\nX mage
+    will cast a shield over the party to protect them from dragons, targets, and
+    webs. Use wisely as the mage needs time to prepare after each use. \r\n\n\n targets,
+    and webs. Use wisely as the mage needs time to prepare after each use. "
 --- !u!222 &533006800
 CanvasRenderer:
   m_ObjectHideFlags: 0
