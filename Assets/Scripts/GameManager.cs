@@ -36,9 +36,32 @@ public class GameManager : MonoBehaviour
     //MANAGERS HERE    
     public GuiManager GuiManager;
 
+    private AudioSource audioSource;//, audioSource_sfx;
+    public AudioClip music_fanfare, music_death, sfx_destroyed;
+
+    public void PlayFanfare()
+    {
+        //audioSource_music.PlayOneShot(music_fanfare);
+        audioSource.clip = music_fanfare;
+        audioSource.Play();
+    }
+
+    public void PlayDeath()
+    {
+        //audioSource_music.PlayOneShot(music_death);
+        audioSource.clip = music_death;
+        audioSource.Play();
+    }
+
+    public void PlayDestroyedSfx()
+    {
+        audioSource.PlayOneShot(sfx_destroyed);
+    }
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         Stats.hitObstacles = 0;
         Stats.arrowsUsed = 0;
         Stats.slashUsed = 0;

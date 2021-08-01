@@ -61,11 +61,18 @@ public class PlayerController : MonoBehaviour
 
     public bool resetPlayerStats = false;
 
+    [Header("AUDIO")]
+    public AudioClip sfx_jump;
+    public AudioClip sfx_hurt, sfx_shield, sfx_arrow, sfx_sword;
+    private AudioSource audioSource;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         if (resetPlayerStats == false)
         {
             arrowCount = PlayerStats.arrowCount;
@@ -141,6 +148,8 @@ public class PlayerController : MonoBehaviour
 
             timerSlash = 1f;
             isSlashing = true;
+
+            audioSource.PlayOneShot(sfx_sword);
         }
 
         //Cooldowns
@@ -173,6 +182,8 @@ public class PlayerController : MonoBehaviour
             Stats.shieldUsed++;
 
             anim_mage.SetTrigger("shield");
+
+            audioSource.PlayOneShot(sfx_shield);
         }
 
         if (shieldOn)
@@ -208,6 +219,8 @@ public class PlayerController : MonoBehaviour
             anim_ranger.SetTrigger("arrow");
             Stats.arrowsUsed++;
             GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
+
+            audioSource.PlayOneShot(sfx_arrow);
         }
 
         //Cooldowns
@@ -247,6 +260,7 @@ public class PlayerController : MonoBehaviour
 
                 health--;
                 GameManager.Instance.GuiManager.UpdateHealth(health);
+                //audioSource.PlayOneShot(sfx_hurt);
 
 
             }
@@ -263,6 +277,7 @@ public class PlayerController : MonoBehaviour
             //UpdatePlayer Stats
             PlayerStats.playerHealth = health;
             PlayerStats.arrowCount = arrowCount;
+            GameManager.Instance.PlayFanfare();
 
         }
     }
@@ -279,6 +294,8 @@ public class PlayerController : MonoBehaviour
 
 
             yVelocity = jumpPower;
+
+            audioSource.PlayOneShot(sfx_jump);
         }
 
         //IF AIRBORNE FALLING
@@ -334,6 +351,8 @@ public class PlayerController : MonoBehaviour
 
     private void Death()
     {
+        GameManager.Instance.PlayDeath();
+
         GameManager.Instance.GuiManager.UpdateHealth(0);
         anim_knight.speed = anim_mage.speed = anim_ranger.speed = .5f;
 
