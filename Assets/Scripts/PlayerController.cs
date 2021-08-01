@@ -44,6 +44,11 @@ public class PlayerController : MonoBehaviour
     public float slashCD = 1.0f;
     public float slashCurrentCD = 0.50f;
 
+    public bool isSlashing = false;
+    public float timerSlash = 1f;
+    public GameObject knightSword;
+
+
     [Header("OTHER")]
     public GameObject spawner;
     public GameObject arrow;
@@ -65,11 +70,15 @@ public class PlayerController : MonoBehaviour
         {
             arrowCount = PlayerStats.arrowCount;
             health = PlayerStats.playerHealth;
+            shieldMaxDuration = PlayerStats.shieldDuration;
         }
 
         else
         {
             arrowCount = arrowMaxCount;
+            PlayerStats.shieldDuration = shieldMaxDuration;
+            PlayerStats.arrowCount = arrowCount;
+            PlayerStats.playerHealth = health;
         }
 
         shieldDuration = shieldMaxDuration;
@@ -92,7 +101,10 @@ public class PlayerController : MonoBehaviour
         Arrow();
         Slash();
 
-        anim_knight.speed = anim_mage.speed = anim_ranger.speed = currentSpeed * .5f;
+        anim_mage.speed = anim_ranger.speed = currentSpeed * .5f;
+
+        if (isSlashing == false)
+            anim_knight.speed = currentSpeed * .5f;
 
         UpdateProgressGUI();
 
@@ -123,12 +135,28 @@ public class PlayerController : MonoBehaviour
 
             anim_knight.speed = 1f;
             anim_knight.SetTrigger("slash");
+            anim_knight.speed = 1f;
+
+            knightSword.transform.localScale = new Vector3(1.57f * 4, 1.57f * 4, 1.57f * 4);
+
+            timerSlash = 1f;
+            isSlashing = true;
         }
 
         //Cooldowns
         if (slashCurrentCD > 0)
             slashCurrentCD -= Time.deltaTime;
 
+        if (isSlashing == true)
+        {
+            timerSlash -= Time.deltaTime;
+
+            if (timerSlash <= 0)
+            {
+                isSlashing = false;
+                knightSword.transform.localScale = new Vector3(1.57f, 1.57f, 1.57f);
+            }
+        }
         
     }
 

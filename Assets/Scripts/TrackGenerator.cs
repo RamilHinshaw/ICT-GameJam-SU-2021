@@ -8,7 +8,7 @@ public class TrackGenerator : MonoBehaviour
     const float CENTER_SPAWN = 4.257f;
     const float LEFT_SPAWN = CENTER_SPAWN - 1;
     const float RIGHT_SPAWN = CENTER_SPAWN + 1;
-    const float START_SPAWN_Z = -2f;
+    const float START_SPAWN_Z = -4f;
 
     [SerializeField] public List<Segment> segments = new List<Segment>(); //SEGMENT SETTINGS
 
