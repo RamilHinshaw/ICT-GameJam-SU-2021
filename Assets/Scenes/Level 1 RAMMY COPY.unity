@@ -517,6 +517,178 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100741818}
   m_CullTransparentMesh: 1
+--- !u!1 &151315337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 151315338}
+  - component: {fileID: 151315339}
+  m_Layer: 0
+  m_Name: _LVL 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &151315338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151315337}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.473055, y: -6.0877314, z: 84.64469}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2042216069}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151315339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151315337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc1a6f5ec7442f42ac086f1c62b5601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segments:
+  - name: Easy
+    lanes:
+    - left: 0
+      middle: 0
+      right: 0
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 4
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 4
+      weight: 5
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 1
+      weight: 7
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 1
+      weight: 7
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 2
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 2
+      weight: 2
+      randomize: 1
+    numberOfLanes: 20
+    spaceBetweenLanes: 4
+  - name: Medium
+    lanes:
+    - left: 0
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 1
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 3
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    numberOfLanes: 30
+    spaceBetweenLanes: 4
+  generatedTrack: []
+  obstaclePrefabs:
+  - {fileID: 0}
+  - {fileID: 9114878346996964315, guid: 4d757ac142812dd41b62696a365ade0a, type: 3}
+  - {fileID: 4811040649964466026, guid: 241c9ccc0f0c2db4e9f2847223fd1e36, type: 3}
+  - {fileID: 6388939140754811867, guid: 4978b27ba5ee9e6498cf61716d1cd3c6, type: 3}
+  - {fileID: 6192690515352653396, guid: 5d2bc67b09219f24cb349c2fb1b47972, type: 3}
+  trackObj: {fileID: 1225252363}
+  trackRend: {fileID: 1142495129}
+  endZone: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
 --- !u!95 &153294249 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: b56b218a7a883bb45b13cd098d8db5f3,
@@ -2038,12 +2210,12 @@ GameObject:
   - component: {fileID: 565902814}
   - component: {fileID: 565902815}
   m_Layer: 0
-  m_Name: _LVL 1
+  m_Name: OLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &565902814
 Transform:
   m_ObjectHideFlags: 0
@@ -2056,7 +2228,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042216069}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &565902815
 MonoBehaviour:
@@ -2675,6 +2847,670 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &626048861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 626048862}
+  - component: {fileID: 626048863}
+  m_Layer: 0
+  m_Name: _LVL 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &626048862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626048861}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.473055, y: -6.0877314, z: 84.64469}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2042216069}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &626048863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626048861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc1a6f5ec7442f42ac086f1c62b5601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segments:
+  - name: Easy
+    lanes:
+    - left: 0
+      middle: 0
+      right: 0
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 4
+      weight: 5
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 1
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 2
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 2
+      weight: 8
+      randomize: 1
+    numberOfLanes: 15
+    spaceBetweenLanes: 6
+  - name: Easy
+    lanes:
+    - left: 0
+      middle: 0
+      right: 0
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 4
+      weight: 5
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 1
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 2
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 2
+      weight: 8
+      randomize: 1
+    numberOfLanes: 15
+    spaceBetweenLanes: 4
+  - name: Medium
+    lanes:
+    - left: 0
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 1
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 3
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    numberOfLanes: 10
+    spaceBetweenLanes: 6
+  - name: Easy
+    lanes:
+    - left: 0
+      middle: 0
+      right: 0
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 4
+      weight: 5
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 1
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 2
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 2
+      weight: 8
+      randomize: 1
+    numberOfLanes: 10
+    spaceBetweenLanes: 3
+  - name: Medium
+    lanes:
+    - left: 0
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 1
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 3
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    numberOfLanes: 5
+    spaceBetweenLanes: 6
+  - name: Easy
+    lanes:
+    - left: 0
+      middle: 0
+      right: 0
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 4
+      weight: 5
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 1
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 2
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 2
+      weight: 8
+      randomize: 1
+    numberOfLanes: 10
+    spaceBetweenLanes: 6
+  - name: Easy
+    lanes:
+    - left: 0
+      middle: 0
+      right: 0
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 4
+      weight: 5
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 1
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 2
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 2
+      weight: 8
+      randomize: 1
+    numberOfLanes: 10
+    spaceBetweenLanes: 3
+  - name: Medium
+    lanes:
+    - left: 0
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 1
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 3
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    numberOfLanes: 5
+    spaceBetweenLanes: 7
+  - name: Easy
+    lanes:
+    - left: 0
+      middle: 0
+      right: 0
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 4
+      weight: 5
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 4
+      weight: 7
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 1
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 3
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 3
+      weight: 1
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 1
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 0
+      right: 2
+      weight: 1
+      randomize: 1
+    - left: 0
+      middle: 4
+      right: 2
+      weight: 5
+      randomize: 1
+    - left: 4
+      middle: 4
+      right: 2
+      weight: 8
+      randomize: 1
+    numberOfLanes: 5
+    spaceBetweenLanes: 4
+  - name: Medium
+    lanes:
+    - left: 0
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 1
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 3
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    numberOfLanes: 4
+    spaceBetweenLanes: 4
+  generatedTrack: []
+  obstaclePrefabs:
+  - {fileID: 0}
+  - {fileID: 9114878346996964315, guid: 4d757ac142812dd41b62696a365ade0a, type: 3}
+  - {fileID: 4811040649964466026, guid: 241c9ccc0f0c2db4e9f2847223fd1e36, type: 3}
+  - {fileID: 6388939140754811867, guid: 4978b27ba5ee9e6498cf61716d1cd3c6, type: 3}
+  - {fileID: 6192690515352653396, guid: 5d2bc67b09219f24cb349c2fb1b47972, type: 3}
+  trackObj: {fileID: 1225252363}
+  trackRend: {fileID: 1142495129}
+  endZone: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
 --- !u!1 &677487171
 GameObject:
   m_ObjectHideFlags: 0
@@ -3180,296 +4016,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &841799942
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 841799943}
-  - component: {fileID: 841799944}
-  m_Layer: 0
-  m_Name: _LVL 1 OLD
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &841799943
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841799942}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.473055, y: -6.0877314, z: 84.64469}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2042216069}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &841799944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841799942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc1a6f5ec7442f42ac086f1c62b5601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segments:
-  - name: Easy
-    lanes:
-    - left: 0
-      middle: 0
-      right: 0
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 4
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 4
-      weight: 10
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 2
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 2
-      weight: 8
-      randomize: 1
-    numberOfLanes: 40
-    spaceBetweenLanes: 4
-  - name: Medium
-    lanes:
-    - left: 0
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 3
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 1
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 3
-      weight: 7
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 3
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    numberOfLanes: 2
-    spaceBetweenLanes: 4
-  - name: Easy
-    lanes:
-    - left: 0
-      middle: 0
-      right: 0
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 4
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 4
-      weight: 10
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 2
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 2
-      weight: 8
-      randomize: 1
-    numberOfLanes: 40
-    spaceBetweenLanes: 4
-  - name: Medium
-    lanes:
-    - left: 0
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 3
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 1
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 3
-      weight: 7
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 3
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    numberOfLanes: 5
-    spaceBetweenLanes: 4
-  generatedTrack: []
-  obstaclePrefabs:
-  - {fileID: 0}
-  - {fileID: 9114878346996964315, guid: 4d757ac142812dd41b62696a365ade0a, type: 3}
-  - {fileID: 4811040649964466026, guid: 241c9ccc0f0c2db4e9f2847223fd1e36, type: 3}
-  - {fileID: 6388939140754811867, guid: 4978b27ba5ee9e6498cf61716d1cd3c6, type: 3}
-  - {fileID: 6192690515352653396, guid: 5d2bc67b09219f24cb349c2fb1b47972, type: 3}
-  trackObj: {fileID: 1225252363}
-  trackRend: {fileID: 1142495129}
-  endZone: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
 --- !u!1 &890253004
 GameObject:
   m_ObjectHideFlags: 0
@@ -9047,330 +9593,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &1205872328
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1205872330}
-  - component: {fileID: 1205872329}
-  m_Layer: 0
-  m_Name: _TRACK GENERATOR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1205872329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205872328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc1a6f5ec7442f42ac086f1c62b5601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segments:
-  - name: Easy
-    lanes:
-    - left: 0
-      middle: 0
-      right: 0
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 4
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 4
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 4
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    numberOfLanes: 10
-    spaceBetweenLanes: 3
-  - name: Medium
-    lanes:
-    - left: 0
-      middle: 2
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 3
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 3
-      weight: 5
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 3
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    numberOfLanes: 10
-    spaceBetweenLanes: 3
-  - name: Hard
-    lanes:
-    - left: 3
-      middle: 3
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 3
-      middle: 3
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 3
-      middle: 1
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 2
-      middle: 3
-      right: 3
-      weight: 2
-      randomize: 1
-    - left: 1
-      middle: 1
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 1
-      middle: 1
-      right: 1
-      weight: 2
-      randomize: 1
-    numberOfLanes: 0
-    spaceBetweenLanes: 4
-  - name: Easy
-    lanes:
-    - left: 0
-      middle: 0
-      right: 0
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 4
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 4
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 4
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    numberOfLanes: 10
-    spaceBetweenLanes: 3
-  - name: Medium
-    lanes:
-    - left: 0
-      middle: 2
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 3
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 3
-      weight: 5
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 3
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    numberOfLanes: 10
-    spaceBetweenLanes: 3
-  generatedTrack: []
-  obstaclePrefabs:
-  - {fileID: 0}
-  - {fileID: 9114878346996964315, guid: 4d757ac142812dd41b62696a365ade0a, type: 3}
-  - {fileID: 4811040649964466026, guid: 241c9ccc0f0c2db4e9f2847223fd1e36, type: 3}
-  - {fileID: 6388939140754811867, guid: 4978b27ba5ee9e6498cf61716d1cd3c6, type: 3}
-  - {fileID: 6192690515352653396, guid: 5d2bc67b09219f24cb349c2fb1b47972, type: 3}
-  trackObj: {fileID: 1225252363}
-  trackRend: {fileID: 1142495129}
-  endZone: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
---- !u!4 &1205872330
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205872328}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.473055, y: -6.0877314, z: 84.64469}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2042216069}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225252363
 GameObject:
   m_ObjectHideFlags: 0
@@ -9545,7 +9767,7 @@ Transform:
   m_Father: {fileID: 1200470071}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1240075323
+--- !u!1 &1245521843
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9553,8 +9775,83 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1240075324}
-  - component: {fileID: 1240075325}
+  - component: {fileID: 1245521844}
+  - component: {fileID: 1245521846}
+  - component: {fileID: 1245521845}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1245521844
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245521843}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 614172222}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1245521845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245521843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1245521846
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245521843}
+  m_CullTransparentMesh: 1
+--- !u!1 &1270992044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1270992045}
+  - component: {fileID: 1270992046}
   m_Layer: 0
   m_Name: _LVL 3
   m_TagString: Untagged
@@ -9562,27 +9859,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &1240075324
+--- !u!4 &1270992045
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240075323}
+  m_GameObject: {fileID: 1270992044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -13.473055, y: -6.0877314, z: 84.64469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042216069}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1240075325
+--- !u!114 &1270992046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240075323}
+  m_GameObject: {fileID: 1270992044}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abc1a6f5ec7442f42ac086f1c62b5601, type: 3}
@@ -9986,81 +10283,6 @@ MonoBehaviour:
   trackObj: {fileID: 1225252363}
   trackRend: {fileID: 1142495129}
   endZone: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
---- !u!1 &1245521843
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1245521844}
-  - component: {fileID: 1245521846}
-  - component: {fileID: 1245521845}
-  m_Layer: 5
-  m_Name: Handle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1245521844
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245521843}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 614172222}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1245521845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245521843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1245521846
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245521843}
-  m_CullTransparentMesh: 1
 --- !u!1 &1284557931
 GameObject:
   m_ObjectHideFlags: 0
@@ -11271,178 +11493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befd031fb4bb4894489b3d1a917e86d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1888150534
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1888150535}
-  - component: {fileID: 1888150536}
-  m_Layer: 0
-  m_Name: _LVL 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1888150535
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888150534}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.473055, y: -6.0877314, z: 84.64469}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2042216069}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1888150536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888150534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc1a6f5ec7442f42ac086f1c62b5601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  segments:
-  - name: Easy
-    lanes:
-    - left: 0
-      middle: 0
-      right: 0
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 4
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 4
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 1
-      weight: 7
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 3
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 1
-      weight: 7
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 2
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 2
-      weight: 2
-      randomize: 1
-    numberOfLanes: 20
-    spaceBetweenLanes: 4
-  - name: Medium
-    lanes:
-    - left: 0
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 3
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 1
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 3
-      weight: 7
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 3
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    numberOfLanes: 30
-    spaceBetweenLanes: 4
-  generatedTrack: []
-  obstaclePrefabs:
-  - {fileID: 0}
-  - {fileID: 9114878346996964315, guid: 4d757ac142812dd41b62696a365ade0a, type: 3}
-  - {fileID: 4811040649964466026, guid: 241c9ccc0f0c2db4e9f2847223fd1e36, type: 3}
-  - {fileID: 6388939140754811867, guid: 4978b27ba5ee9e6498cf61716d1cd3c6, type: 3}
-  - {fileID: 6192690515352653396, guid: 5d2bc67b09219f24cb349c2fb1b47972, type: 3}
-  trackObj: {fileID: 1225252363}
-  trackRend: {fileID: 1142495129}
-  endZone: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
 --- !u!1 &1895390830
 GameObject:
   m_ObjectHideFlags: 0
@@ -11913,11 +11963,10 @@ Transform:
   m_LocalPosition: {x: 14.062055, y: 12.385525, z: -95.69284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 841799943}
-  - {fileID: 1205872330}
-  - {fileID: 1888150535}
   - {fileID: 565902814}
-  - {fileID: 1240075324}
+  - {fileID: 151315338}
+  - {fileID: 626048862}
+  - {fileID: 1270992045}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
