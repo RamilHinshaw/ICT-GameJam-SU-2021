@@ -96,6 +96,8 @@ public class PlayerController : MonoBehaviour
 
             slashCurrentCD = slashCD;
             Stats.slashUsed++;
+
+            anim_knight.SetTrigger("slash");
         }
 
         //Cooldowns
@@ -116,6 +118,8 @@ public class PlayerController : MonoBehaviour
             shieldOn = true;
             shieldDuration = shieldMaxDuration;
             Stats.shieldUsed++;
+
+            anim_mage.SetTrigger("shield");
         }
 
         if (shieldOn)
@@ -148,6 +152,7 @@ public class PlayerController : MonoBehaviour
             arrowCurrentCD = arrowCD;
             arrowCount--;
 
+            anim_ranger.SetTrigger("arrow");
             Stats.arrowsUsed++;
         }
 
@@ -168,25 +173,16 @@ public class PlayerController : MonoBehaviour
             //if sheild but touch hole still slow down
             var script = other.GetComponent<Obstacle>();
 
-
-            //print("HIT!");
-
             if (shieldOn == false)
             {
                 currentSpeed -= accelerationReduction;
                 script.Explode();
                 Stats.hitObstacles++;
-            }
 
-            //else
-            //{
-            //    if (script.obstacleType == ObstacleType.Log)
-            //    {
-            //        currentSpeed -= accelerationReduction;
-            //        script.Explode();
-            //        Stats.hitObstacles++;
-            //    }
-            //}
+                anim_knight.SetTrigger("hurt");
+                anim_mage.SetTrigger("hurt");
+                anim_ranger.SetTrigger("hurt");
+            }
 
             if (currentSpeed < 0)
                 currentSpeed = 0;
@@ -205,19 +201,29 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("JUMP!");
             //Jump
+            anim_knight.SetBool("airborne", true);
+            anim_mage.SetBool("airborne", true);
+            anim_ranger.SetBool("airborne", true);
+
+
             yVelocity = jumpPower;
         }
 
-        //IF AIRBORNE FALL
+        //IF AIRBORNE FALLING
         if (transform.position.y > FLOOR_HEIGHT)
         {
             yVelocity -= fallSpeed * Time.deltaTime;
         }        
 
+        //If touches ground
         if (yVelocity <= 0 && (transform.position.y <= FLOOR_HEIGHT))
         {
             yVelocity = 0;
             transform.position = new Vector3(transform.position.x, FLOOR_HEIGHT, transform.position.z);
+
+            anim_knight.SetBool("airborne", false);
+            anim_mage.SetBool("airborne", false);
+            anim_ranger.SetBool("airborne", false);
         }
 
         Vector3 targetYVelocity = new Vector3(transform.position.x, transform.position.y + yVelocity, transform.position.z);
