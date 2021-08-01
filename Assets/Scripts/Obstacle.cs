@@ -20,5 +20,6 @@ public class Obstacle : MonoBehaviour
     {
         Destroy(gameObject);
         Instantiate(particle, transform.position, transform.rotation);
+        GameManager.Instance.PlayDestroyedSfx();
     }
 }
