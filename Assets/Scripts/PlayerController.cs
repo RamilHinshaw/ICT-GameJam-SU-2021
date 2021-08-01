@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
 using Enums;
 
 public class PlayerController : MonoBehaviour
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
     private bool usedMovementLastTime = false;
     private bool isDisabled = false;
 
+    public Animator anim_knight, anim_mage, anim_ranger;
+
 
 
     // Start is called before the first frame update
@@ -71,6 +74,8 @@ public class PlayerController : MonoBehaviour
         Shield();
         Arrow();
         Slash();
+
+        anim_knight.speed = anim_mage.speed = anim_ranger.speed = currentSpeed * .5f;
 
     }
 
