@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
 using Enums;
 
 public class PlayerController : MonoBehaviour
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public float currentSpeed = 0;
     public float topSpeed = 3f;
     public float acceleration = 0.5f;
-    public float accelerationReduction = 0.33f;
+    public float accelerationReduction = 1.0f;
 
     [Header("Arrow")]
     public float arrowCD = 1.0f;
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
     private bool usedMovementLastTime = false;
     private bool isDisabled = false;
 
+    public Animator anim_knight, anim_mage, anim_ranger;
+
 
 
     // Start is called before the first frame update
@@ -71,6 +74,8 @@ public class PlayerController : MonoBehaviour
         Shield();
         Arrow();
         Slash();
+
+        anim_knight.speed = anim_mage.speed = anim_ranger.speed = currentSpeed * .5f;
 
     }
 
@@ -160,26 +165,28 @@ public class PlayerController : MonoBehaviour
         //Lose Speed
         if (other.CompareTag("Obstacle"))
         {
+            //if sheild but touch hole still slow down
+            var script = other.GetComponent<Obstacle>();
+
 
             //print("HIT!");
 
             if (shieldOn == false)
             {
                 currentSpeed -= accelerationReduction;
+                script.Explode();
                 Stats.hitObstacles++;
             }
 
-            else
-            {
-                //if sheild but touch hole still slow down
-                var script = other.GetComponent<Obstacle>();
-
-                if (script.obstacleType == ObstacleType.Hole)
-                {
-                    currentSpeed -= accelerationReduction;
-                    Stats.hitObstacles++;
-                }
-            }
+            //else
+            //{
+            //    if (script.obstacleType == ObstacleType.Log)
+            //    {
+            //        currentSpeed -= accelerationReduction;
+            //        script.Explode();
+            //        Stats.hitObstacles++;
+            //    }
+            //}
 
             if (currentSpeed < 0)
                 currentSpeed = 0;
@@ -210,6 +217,7 @@ public class PlayerController : MonoBehaviour
         if (yVelocity <= 0 && (transform.position.y <= FLOOR_HEIGHT))
         {
             yVelocity = 0;
+            transform.position = new Vector3(transform.position.x, FLOOR_HEIGHT, transform.position.z);
         }
 
         Vector3 targetYVelocity = new Vector3(transform.position.x, transform.position.y + yVelocity, transform.position.z);
