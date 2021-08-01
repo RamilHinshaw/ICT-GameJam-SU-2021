@@ -66,11 +66,15 @@ public class PlayerController : MonoBehaviour
     public AudioClip sfx_hurt, sfx_shield, sfx_arrow, sfx_sword;
     private AudioSource audioSource;
 
+    private Vector3 startCenterPos;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        startCenterPos = transform.position;
+
         audioSource = GetComponent<AudioSource>();
 
         if (resetPlayerStats == false)
