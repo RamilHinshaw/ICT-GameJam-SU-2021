@@ -80,13 +80,11 @@ public class GameManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        Telemetry.hitObstacles = 0;
-        Telemetry.arrowsUsed = 0;
-        Telemetry.slashUsed = 0;
-        Telemetry.shieldUsed = 0;
-        Telemetry.arrowsHit = 0;
-        Telemetry.slashHit = 0;
-        Telemetry.shieldHit = 0;
+        Telemetry.Reset();
+
+        //Hardcoded if first level
+        if (SceneManager.GetActiveScene().name == "Level 1")
+            Telemetry.GenerateUserID();
     }
 
     private void Update()

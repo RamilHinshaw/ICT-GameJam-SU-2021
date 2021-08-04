@@ -32,7 +32,7 @@ public static class Telemetry
 
     public static void Reset()
     {
-        userID = -1;
+        //userID = -1;
         level = string.Empty;
 
         hitObstacles = 0;
