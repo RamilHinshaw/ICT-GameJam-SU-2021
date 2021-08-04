@@ -23,7 +23,6 @@ public class Obstacle : MonoBehaviour
             TelemetryDamagedFrom((int)obstacleType);
         }
 
-        TelemetryDamagedFrom( (int) obstacleType);
         Destroy(gameObject);
         Instantiate(particle, transform.position, transform.rotation);
         GameManager.Instance.PlayDestroyedSfx();
