@@ -30,7 +30,7 @@ public class Slash : MonoBehaviour
 
             if (script.obstacleType == Enums.ObstacleType.Enemies || script.obstacleType == Enums.ObstacleType.Web)
             {
-                Stats.slashHit++;
+                Telemetry.slashHit++;
                 script.Explode();
                 //Destroy(other.gameObject);
             }

@@ -7,6 +7,7 @@ using Enums;
 public class PlayerController : MonoBehaviour
 {
 
+
     private int position = 0;
 
     //jUMP
@@ -97,6 +98,10 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.GuiManager.SetupSliders(shieldCD, arrowCD, slashCD);
         GameManager.Instance.GuiManager.UpdateHealth(health);
         GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
+
+        //Hardcoded
+        GameManager.Instance.player = this;
+        GameManager.Instance.playerStartPos = transform.position;
     }
 
     // Update is called once per frame
@@ -142,7 +147,7 @@ public class PlayerController : MonoBehaviour
             slashObj.SetActive(true);
 
             slashCurrentCD = slashCD;
-            Stats.slashUsed++;
+            Telemetry.slashUsed++;
 
             anim_knight.speed = 1f;
             anim_knight.SetTrigger("slash");
@@ -183,7 +188,7 @@ public class PlayerController : MonoBehaviour
             shieldOBJ.SetActive(true);
             shieldOn = true;
             shieldDuration = shieldMaxDuration;
-            Stats.shieldUsed++;
+            Telemetry.shieldUsed++;
 
             anim_mage.SetTrigger("shield");
 
@@ -221,7 +226,7 @@ public class PlayerController : MonoBehaviour
             arrowCount--;
 
             anim_ranger.SetTrigger("arrow");
-            Stats.arrowsUsed++;
+            Telemetry.arrowsUsed++;
             GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
 
             audioSource.PlayOneShot(sfx_arrow);
@@ -248,7 +253,7 @@ public class PlayerController : MonoBehaviour
             {
                 currentSpeed -= accelerationReduction;
                 script.Explode();
-                Stats.hitObstacles++;
+                Telemetry.hitObstacles++;
 
 
                 if (health > 1)
@@ -275,14 +280,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("End"))
         {
-            isDisabled = true;
-            GameManager.Instance.GuiManager.ShowCompleteScreen();
-
-            //UpdatePlayer Stats
-            PlayerStats.playerHealth = health;
-            PlayerStats.arrowCount = arrowCount;
-            GameManager.Instance.PlayFanfare();
-
+            CompletedLevel();
         }
     }
 
@@ -296,10 +294,11 @@ public class PlayerController : MonoBehaviour
             anim_mage.SetBool("airborne", true);
             anim_ranger.SetBool("airborne", true);
 
-
             yVelocity = jumpPower;
 
             audioSource.PlayOneShot(sfx_jump);
+
+            Telemetry.jumpsUsed++;
         }
 
         //IF AIRBORNE FALLING
@@ -365,7 +364,31 @@ public class PlayerController : MonoBehaviour
         anim_mage.SetTrigger("death");
         anim_ranger.SetTrigger("death");
 
+        //Telemetry
+        Telemetry.playerDied = true;
+        Telemetry.arrowsLeft = arrowCount;
+        Telemetry.remainingHealth = health;
+
         GameManager.Instance.GuiManager.ShowDeathScreen();
+
+ 
+    }
+
+    private void CompletedLevel()
+    {
+        isDisabled = true;
+
+
+        //UpdatePlayer Stats
+        PlayerStats.playerHealth = health;
+        PlayerStats.arrowCount = arrowCount;
+        GameManager.Instance.PlayFanfare();
+
+        //Telemetry
+        Telemetry.arrowsLeft = arrowCount;
+        Telemetry.remainingHealth = health;
+
+        GameManager.Instance.GuiManager.ShowCompleteScreen();
     }
 
     private bool isHorizontalUsed()

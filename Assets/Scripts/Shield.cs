@@ -12,9 +12,10 @@ public class Shield : MonoBehaviour
 
             if (script.obstacleType == Enums.ObstacleType.Enemies ||
                 script.obstacleType == Enums.ObstacleType.Web ||
-                script.obstacleType == Enums.ObstacleType.Rock)
+                script.obstacleType == Enums.ObstacleType.Rock ||
+                script.obstacleType == Enums.ObstacleType.Log)
             {
-                Stats.shieldHit++;
+                Telemetry.shieldHit++;
                 script.Explode();
                 //Destroy(other.gameObject);
             }

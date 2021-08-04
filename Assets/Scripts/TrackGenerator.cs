@@ -80,7 +80,8 @@ public class TrackGenerator : MonoBehaviour
         trackObj.transform.localScale = new Vector3(trackObj.transform.localScale.x, trackObj.transform.localScale.y, zSpawnOffset);
 
         //END ZONE
-        Instantiate(endZone, new Vector3(CENTER_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset + 5), Quaternion.identity);
+        var endObj = Instantiate(endZone, new Vector3(CENTER_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset + 5), Quaternion.identity);
+        GameManager.Instance.endTrigger = endObj;
 
         //Adjust Track Texture
         Material mat = trackRend.material;

@@ -65,11 +65,13 @@ public class Segment
     {
         System.Random random = new System.Random();
 
-        List<Lane> rdmLanes = new List<Lane>();
+        List<Lane> rdmLanes = new List<Lane>(); //Empty List
 
         for (int i = 0; i < numberOfLanes; i++)
         {
-            rdmLanes.Add(RandomLane(random));
+            Lane rdmLane = RandomLane(random);
+            rdmLane.TelemetryObstacle();
+            rdmLanes.Add(rdmLane);
         }
 
         return rdmLanes;
@@ -77,23 +79,11 @@ public class Segment
 
     public List<int> RandomizeIntList(System.Random random, List<int> list)
     {
-        //List<int> tempList = new List<int>();
-
-        //for (int i = 0; i != 2; i++)
-        //{
-        //    Debug.Log("BLAH!");
-        //    int rdm = Random.Range(0, list.Count);
-        //    tempList.Add( list[rdm]);
-        //    list.RemoveAt(rdm);
-        //}
-
-        //return tempList;
-        //--------------------------------------------
+  
         List<int> newList = new List<int>();
         newList.AddRange(list);
 
-        //Shuffle int list
-        //System.Random rng = new System.Random();
+
         int n = list.Count;
         while (n > 1)
         {
@@ -107,20 +97,6 @@ public class Segment
         Debug.Log("RANDOMIZED!");
         return newList;
 
-        //----------------------------------------------
-
-
-        //int n = list.Count;
-
-        //for (int i = list.Count - 1; i > 1; i--)
-        //{
-        //    int rnd = random.Next(i + 1);
-
-        //    var value = list[rnd];
-        //    list[rnd] = list[i];
-        //    list[i] = value;
-        //}
-
-        //return list;
+  
     }
 }

@@ -22,11 +22,9 @@ public class LoadScene : MonoBehaviour
 
     public void Start()
     {
-        //if (skipInputButton == "")
-           // skipInputButton = "Start";
-
-        //if (resetTimeScale)
-           // Time.timeScale = 1;
+        //Hardcoded if first level
+        if (SceneManager.GetActiveScene().name == "Level 1")
+            Telemetry.GenerateUserID();
     }
 
     public void Update()

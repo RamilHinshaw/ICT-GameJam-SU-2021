@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
+using UnityEngine.SceneManagement;
+
 
 public class GuiManager : MonoBehaviour
 {
@@ -51,8 +52,7 @@ public class GuiManager : MonoBehaviour
 
     public void ShowCompleteScreen()
     {
-        if (GameManager.Instance.isCSVLogging)
-            WriteToCSV();
+        RecordTelemetryData();
 
         screen_levelCompleted.SetActive(true);
 
@@ -60,19 +60,26 @@ public class GuiManager : MonoBehaviour
 
     public void ShowDeathScreen()
     {
+        RecordTelemetryData();
         screen_death.SetActive(true);
+    }
+
+    private void RecordTelemetryData()
+    {
+        if (GameManager.Instance.isCSVLogging)
+        {
+            Telemetry.level = SceneManager.GetActiveScene().name;
+            Telemetry.timeInStage = GameManager.Instance.timerForLevel;
+            Telemetry.trackProgress = GameManager.Instance.trackProgress;
+            WriteToCSV();
+        }
     }
 
     private void WriteToCSV()
     {
         string filename = Application.dataPath + "/telemetrics.csv";
         Debug.Log("WRITTEN TO " + filename);
-        TextWriter tw = new StreamWriter(filename, true);
-
-        tw.WriteLine(Stats.hitObstacles.ToString() + "," + Stats.arrowsUsed.ToString() + "," + Stats.slashUsed.ToString() +
-            "," + Stats.shieldUsed.ToString() + "," + Stats.arrowsHit.ToString() + "," + Stats.slashHit.ToString() + "," + Stats.shieldHit.ToString());
-
-        tw.Close();
+        Telemetry.WriteToFile(filename);
     }
 
 }

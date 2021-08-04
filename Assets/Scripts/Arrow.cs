@@ -29,7 +29,7 @@ public class Arrow : MonoBehaviour
             {
                 //Destroy(other.gameObject);
                 script.Explode();
-                Stats.arrowsHit++;
+                Telemetry.arrowsHit++;
 
                 if (piercing == false)
                 {

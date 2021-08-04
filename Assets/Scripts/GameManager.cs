@@ -40,6 +40,23 @@ public class GameManager : MonoBehaviour
     private AudioSource audioSource;//, audioSource_sfx;
     public AudioClip music_fanfare, music_death, sfx_destroyed;
 
+    [HideInInspector] public float timerForLevel = 0f;
+
+
+    //Super Hard Coded!
+    [HideInInspector]  public PlayerController player;
+    public GameObject endTrigger;
+    [HideInInspector]  public Vector3 playerStartPos;
+    public float trackProgress = 0f; //100% if at goal
+
+    public void UpdatePlayerProgress()
+    {
+        float fullTrack = Vector3.Distance(playerStartPos, endTrigger.transform.position);
+        float completedTrack = Vector3.Distance(player.transform.position, endTrigger.transform.position);
+
+        trackProgress =  (1 - (completedTrack / fullTrack)) * 100;        
+    }
+
     public void PlayFanfare()
     {
         //audioSource_music.PlayOneShot(music_fanfare);
@@ -63,18 +80,21 @@ public class GameManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
 
-        Stats.hitObstacles = 0;
-        Stats.arrowsUsed = 0;
-        Stats.slashUsed = 0;
-        Stats.shieldUsed = 0;
-        Stats.arrowsHit = 0;
-        Stats.slashHit = 0;
-        Stats.shieldHit = 0;
+        Telemetry.hitObstacles = 0;
+        Telemetry.arrowsUsed = 0;
+        Telemetry.slashUsed = 0;
+        Telemetry.shieldUsed = 0;
+        Telemetry.arrowsHit = 0;
+        Telemetry.slashHit = 0;
+        Telemetry.shieldHit = 0;
     }
 
     private void Update()
     {
         GuiManager.Update();
+
+        timerForLevel += Time.deltaTime;
+        UpdatePlayerProgress();
 
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start"))

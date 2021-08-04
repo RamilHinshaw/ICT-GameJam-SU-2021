@@ -74121,6 +74121,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
+--- !u!1 &1915728795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268,
+    type: 3}
+  m_PrefabInstance: {fileID: 1915728794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1915753277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74490,6 +74496,11 @@ MonoBehaviour:
   music_fanfare: {fileID: 8300000, guid: 07c6197feff0d274ea7e7af1a568d35e, type: 3}
   music_death: {fileID: 8300000, guid: b1320c2d959e352498cfc0da11c22b56, type: 3}
   sfx_destroyed: {fileID: 8300000, guid: 5c24ceffed8c0b94fba766ca40f050fd, type: 3}
+  timerForLevel: 0
+  player: {fileID: 0}
+  endTrigger: {fileID: 1915728795}
+  playerStartPos: {x: 0, y: 0, z: 0}
+  trackProgress: 0
 --- !u!4 &1916886765
 Transform:
   m_ObjectHideFlags: 0
