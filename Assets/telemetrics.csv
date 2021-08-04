@@ -1,9 +1,5 @@
-ID,Level,Hit by Obsticles,Arrow ussage,Slash Usage,Sheild,Arrow hit,Slash hit,shield hit,Time,Death,Amount of Rocks spawned,Amount of Logs spawned,Amount of Dragons Spawned,Amount of Free Space,Amount of times jumperd,Health at the end of the level,Arrow Capacity at the end of the level,How many times they ran into a rock,How many times they ran into a dragon,how many times they ran into a web,how many times they ran into a log,Progress on Stage
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,
+ID,Level,Hit by Obsticles,Arrow Usage,Slash Usage,Shield Usage,Arrow hit,Slash hit,shield hit,Time,Death,Amount of Rocks spawned,Amount of Dragons Spawned,Amount of Logs spawned,Amount of Free Space,Amount of Webs,Jumps Used,Health at the end of the level,Arrows Left,How many times they ran into a rock,how many times they ran into a web,How many times they ran into a dragon,how many times they ran into a log,Progress on Stage
+42629,Level 1,0,2,20,7,2,20,8,100.31,FALSE,19,63,113,55,17,120,10,3,1,26,1,100%,
+42629,Level 2,2,2,7,6,2,6,10,55.93895,FALSE,16,27,61,19,12,58,8,1,6,9,1,100%,
+42629,Level 3,2,4,10,8,4,8,16,89.79812,FALSE,34,102,54,38,45,55,6,1,0,22,4,100%,
+42629,Credits,0,1,1,1,0,0,0,28.31667,FALSE,0,0,0,0,0,43,11,0,0,0,0,99%,
