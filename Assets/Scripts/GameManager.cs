@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour
         float fullTrack = Vector3.Distance(playerStartPos, endTrigger.transform.position);
         float completedTrack = Vector3.Distance(player.transform.position, endTrigger.transform.position);
 
-        trackProgress =  (1 - (completedTrack / fullTrack)) * 100;        
+        trackProgress =  (1 - (completedTrack / fullTrack)) * 100;
+        GuiManager.UpdateTrackProgress(trackProgress);
     }
 
     public void PlayFanfare()

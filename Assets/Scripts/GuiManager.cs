@@ -11,15 +11,21 @@ public class GuiManager : MonoBehaviour
     public Text arrowCount;
     public Slider progress_mage, progress_ranger, progress_knight;
     public GameObject screen_death, screen_levelCompleted;
+    public Slider progress_track;
 
     public void Start()
     {
+        
+    }
 
+    public void UpdateTrackProgress(float val)
+    {
+        progress_track.value = val;
     }
 
     public void Update()
     {
-        
+        progress_track.value = GameManager.Instance.trackProgress;
     }
 
     public void UpdateArrows(int _arrows)
