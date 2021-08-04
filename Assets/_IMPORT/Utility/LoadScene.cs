@@ -22,9 +22,7 @@ public class LoadScene : MonoBehaviour
 
     public void Start()
     {
-        //Hardcoded if first level
-        if (SceneManager.GetActiveScene().name == "Level 1")
-            Telemetry.GenerateUserID();
+
     }
 
     public void Update()

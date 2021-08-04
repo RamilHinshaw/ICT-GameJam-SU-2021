@@ -16,8 +16,13 @@ public class Obstacle : MonoBehaviour
     public ObstacleType obstacleType;
     public GameObject particle;
 
-    public void Explode()
+    public void Explode(bool playerHit = false)
     {
+        if (playerHit == true)
+        {
+            TelemetryDamagedFrom((int)obstacleType);
+        }
+
         TelemetryDamagedFrom( (int) obstacleType);
         Destroy(gameObject);
         Instantiate(particle, transform.position, transform.rotation);

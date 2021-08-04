@@ -252,7 +252,7 @@ public class PlayerController : MonoBehaviour
             if (shieldOn == false)
             {
                 currentSpeed -= accelerationReduction;
-                script.Explode();
+                script.Explode(true);
                 Telemetry.hitObstacles++;
 
 

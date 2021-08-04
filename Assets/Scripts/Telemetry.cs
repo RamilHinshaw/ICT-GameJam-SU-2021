@@ -48,7 +48,7 @@ public static class Telemetry
         jumpsUsed = 0;
         remainingHealth = 0;
         arrowsLeft = 0;
-        damagedFromRock = damagedFromDragon = damagedFromLog = 0;
+        damagedFromRock = damagedFromDragon = damagedFromLog = damagedFromWeb = 0;
         trackProgress = 0f;
 
     }
@@ -84,6 +84,7 @@ public static class Telemetry
             remainingHealth.ToString() + "," +
             arrowsLeft.ToString() + "," +
             damagedFromRock.ToString() + "," +
+            damagedFromWeb.ToString() + "," +
             damagedFromDragon.ToString() + "," +
             damagedFromLog.ToString() + "," +
             UnityEngine.Mathf.Ceil(trackProgress).ToString() + "%,"
