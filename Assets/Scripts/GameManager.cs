@@ -86,6 +86,8 @@ public class GameManager : MonoBehaviour
         //Hardcoded if first level
         if (SceneManager.GetActiveScene().name == "Level 1")
             Telemetry.GenerateUserID();
+        else if (SceneManager.GetActiveScene().name == "Tutorial")
+            Telemetry.userID = -1;
     }
 
     private void Update()
