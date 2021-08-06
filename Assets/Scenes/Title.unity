@@ -11849,8 +11849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 1142495129}
-  scrollOffset: 0
-  speed: 2.35
+  speed: {x: 0, y: 2.5}
 --- !u!1 &1154094406
 GameObject:
   m_ObjectHideFlags: 0

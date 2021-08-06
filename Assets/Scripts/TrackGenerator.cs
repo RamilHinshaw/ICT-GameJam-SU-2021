@@ -16,16 +16,23 @@ public class TrackGenerator : MonoBehaviour
 
     public List<GameObject> obstaclePrefabs = new List<GameObject>();
 
-    public GameObject trackObj;
-    public Renderer trackRend;
+    private GameObject trackObj;
+    private Renderer trackRend;
     public GameObject endZone;
+
+    private GameObject trackContainer;
 
     // Start is called before the first frame update
     void Start()
     {
-        GenerateTrack();
+        trackObj = GameObject.FindGameObjectWithTag("Track");
+        trackRend = trackObj.transform.Find("Model").GetComponent<Renderer>();
+        //trackContainer = new GameObject("_Generated Level");
+        
 
+        GenerateTrack();
         SpawnTrack(generatedTrack);
+
     }
 
     // Update is called once per frame
@@ -46,29 +53,31 @@ public class TrackGenerator : MonoBehaviour
     private void SpawnTrack(List<Segment> track)
     {
         float zSpawnOffset = 0; //Keep track of the distance of each object to spawn
+        
 
         for (int i = 0; i < track.Count; i++)
         {
       
             for (int j = 0; j < track[i].lanes.Count; j++)
             {
-
+                GameObject generatedLane = null;
 
                 //Spawn for this lane
 
                 //LEFT
                 if (track[i].lanes[j].left != ObstacleType.NULL)
-                    Instantiate(obstaclePrefabs[(int)track[i].lanes[j].left], new Vector3(LEFT_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset), Quaternion.identity);
+                    generatedLane = Instantiate(obstaclePrefabs[(int)track[i].lanes[j].left], new Vector3(LEFT_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset), Quaternion.identity);
 
                 //MIDDLE
                 if (track[i].lanes[j].middle != ObstacleType.NULL)
-                    Instantiate(obstaclePrefabs[(int)track[i].lanes[j].middle], new Vector3(CENTER_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset), Quaternion.identity);
+                    generatedLane = Instantiate(obstaclePrefabs[(int)track[i].lanes[j].middle], new Vector3(CENTER_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset), Quaternion.identity);
 
                 //RIGHT
                 if (track[i].lanes[j].right != ObstacleType.NULL)
-                    Instantiate(obstaclePrefabs[(int)track[i].lanes[j].right], new Vector3(RIGHT_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset), Quaternion.identity);
+                    generatedLane = Instantiate(obstaclePrefabs[(int)track[i].lanes[j].right], new Vector3(RIGHT_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset), Quaternion.identity);
 
                 zSpawnOffset += track[i].spaceBetweenLanes;
+                //generatedLane.transform.parent = trackContainer.transform;
 
             }
 
@@ -82,10 +91,11 @@ public class TrackGenerator : MonoBehaviour
         //END ZONE
         var endObj = Instantiate(endZone, new Vector3(CENTER_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset + 5), Quaternion.identity);
         GameManager.Instance.endTrigger = endObj;
+        //endObj.transform.parent = trackContainer.transform;
 
         //Adjust Track Texture
         Material mat = trackRend.material;
-        mat.SetTextureScale("_MainTex", new Vector2(5, zSpawnOffset + zSpawnOffset * 0.15f) );
-        print(zSpawnOffset);
+        mat.SetTextureScale("_MainTex", new Vector2(5, zSpawnOffset + zSpawnOffset * 0.75f) );
+        //print(zSpawnOffset);
     }
 }

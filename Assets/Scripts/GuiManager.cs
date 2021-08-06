@@ -12,10 +12,11 @@ public class GuiManager : MonoBehaviour
     public Slider progress_mage, progress_ranger, progress_knight;
     public GameObject screen_death, screen_levelCompleted;
     public Slider progress_track;
+    public Text levelName;
 
     public void Start()
     {
-        
+        levelName.text = SceneManager.GetActiveScene().name;
     }
 
     public void UpdateTrackProgress(float val)
