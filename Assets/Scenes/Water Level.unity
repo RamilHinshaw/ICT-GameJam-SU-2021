@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 900585470}
   - component: {fileID: 900585469}
   m_Layer: 0
-  m_Name: ClearPlat
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
