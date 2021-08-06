@@ -16,6 +16,7 @@ public class TrackGenerator : MonoBehaviour
 
     public List<GameObject> obstaclePrefabs = new List<GameObject>();
 
+    public bool ignoreTrack = false;
     private GameObject trackObj;
     private Renderer trackRend;
     public GameObject endZone;
@@ -25,10 +26,13 @@ public class TrackGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        trackObj = GameObject.FindGameObjectWithTag("Track");
-        trackRend = trackObj.transform.Find("Model").GetComponent<Renderer>();
-        //trackContainer = new GameObject("_Generated Level");
-        
+        if (!ignoreTrack)
+        {
+            trackObj = GameObject.FindGameObjectWithTag("Track");
+            trackRend = trackObj.transform.Find("Model").GetComponent<Renderer>();
+            //trackContainer = new GameObject("_Generated Level");
+        }
+
 
         GenerateTrack();
         SpawnTrack(generatedTrack);
@@ -86,7 +90,9 @@ public class TrackGenerator : MonoBehaviour
 
         //Stretch Track
         zSpawnOffset += 15f;
-        trackObj.transform.localScale = new Vector3(trackObj.transform.localScale.x, trackObj.transform.localScale.y, zSpawnOffset);
+
+        if (!ignoreTrack)
+            trackObj.transform.localScale = new Vector3(trackObj.transform.localScale.x, trackObj.transform.localScale.y, zSpawnOffset);
 
         //END ZONE
         var endObj = Instantiate(endZone, new Vector3(CENTER_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset + 5), Quaternion.identity);
