@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 1052817175}
   - component: {fileID: 1052817174}
   m_Layer: 0
-  m_Name: LvL 3 Track Generator
+  m_Name: LvL 4 Track Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -828,7 +828,7 @@ MonoBehaviour:
     - left: 0
       middle: 2
       right: 2
-      weight: 3
+      weight: 1
       randomize: 1
     - left: 0
       middle: 2
@@ -838,7 +838,7 @@ MonoBehaviour:
     - left: 0
       middle: 2
       right: 3
-      weight: 7
+      weight: 4
       randomize: 1
     - left: 4
       middle: 2
@@ -863,7 +863,7 @@ MonoBehaviour:
     - left: 2
       middle: 2
       right: 3
-      weight: 2
+      weight: 7
       randomize: 1
     - left: 2
       middle: 2
@@ -882,22 +882,22 @@ MonoBehaviour:
     - left: 3
       middle: 3
       right: 1
-      weight: 1
+      weight: 3
       randomize: 1
     - left: 3
       middle: 1
       right: 1
-      weight: 3
+      weight: 1
       randomize: 1
     - left: 2
       middle: 3
       right: 3
-      weight: 2
+      weight: 3
       randomize: 1
     - left: 1
       middle: 1
       right: 2
-      weight: 3
+      weight: 1
       randomize: 1
     - left: 1
       middle: 1
@@ -905,7 +905,7 @@ MonoBehaviour:
       weight: 2
       randomize: 1
     numberOfLanes: 5
-    spaceBetweenLanes: 4
+    spaceBetweenLanes: 6
   - name: Medium
     lanes:
     - left: 0
@@ -953,14 +953,14 @@ MonoBehaviour:
       right: 2
       weight: 3
       randomize: 1
-    numberOfLanes: 10
-    spaceBetweenLanes: 6
+    numberOfLanes: 5
+    spaceBetweenLanes: 4
   - name: Hard
     lanes:
     - left: 3
       middle: 3
       right: 3
-      weight: 1
+      weight: 3
       randomize: 1
     - left: 3
       middle: 3
@@ -994,7 +994,7 @@ MonoBehaviour:
     - left: 0
       middle: 2
       right: 2
-      weight: 3
+      weight: 1
       randomize: 1
     - left: 0
       middle: 2
@@ -1029,21 +1029,21 @@ MonoBehaviour:
     - left: 2
       middle: 2
       right: 3
-      weight: 2
+      weight: 7
       randomize: 1
     - left: 2
       middle: 2
       right: 2
       weight: 3
       randomize: 1
-    numberOfLanes: 10
+    numberOfLanes: 5
     spaceBetweenLanes: 4
   - name: Medium
     lanes:
     - left: 0
       middle: 2
       right: 2
-      weight: 3
+      weight: 1
       randomize: 1
     - left: 0
       middle: 2
@@ -1078,7 +1078,7 @@ MonoBehaviour:
     - left: 2
       middle: 2
       right: 3
-      weight: 2
+      weight: 7
       randomize: 1
     - left: 2
       middle: 2
@@ -1092,7 +1092,7 @@ MonoBehaviour:
     - left: 3
       middle: 3
       right: 3
-      weight: 1
+      weight: 3
       randomize: 1
     - left: 3
       middle: 3
@@ -1120,13 +1120,13 @@ MonoBehaviour:
       weight: 2
       randomize: 1
     numberOfLanes: 2
-    spaceBetweenLanes: 6
+    spaceBetweenLanes: 5
   - name: Medium
     lanes:
     - left: 0
       middle: 2
       right: 2
-      weight: 3
+      weight: 1
       randomize: 1
     - left: 0
       middle: 2
@@ -1136,7 +1136,7 @@ MonoBehaviour:
     - left: 0
       middle: 2
       right: 3
-      weight: 7
+      weight: 1
       randomize: 1
     - left: 4
       middle: 2
@@ -1146,12 +1146,12 @@ MonoBehaviour:
     - left: 4
       middle: 2
       right: 1
-      weight: 7
+      weight: 3
       randomize: 1
     - left: 4
       middle: 2
       right: 3
-      weight: 7
+      weight: 3
       randomize: 1
     - left: 2
       middle: 2
@@ -1161,7 +1161,7 @@ MonoBehaviour:
     - left: 2
       middle: 2
       right: 3
-      weight: 2
+      weight: 7
       randomize: 1
     - left: 2
       middle: 2
