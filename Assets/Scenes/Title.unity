@@ -2621,7 +2621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.484375, y: 84.18381}
+  m_AnchoredPosition: {x: -6.484314, y: 84.18381}
   m_SizeDelta: {x: -63.8175, y: -229.9218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &478203835
@@ -3707,12 +3707,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.858
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -4489,6 +4489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.5
+  hitbox: {fileID: 0}
 --- !u!65 &677487174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12185,12 +12186,13 @@ MonoBehaviour:
   accelerationReduction: 100
   arrowCD: 0.5
   arrowCurrentCD: 0.5
+  arrowCount: 5
   arrowMaxCount: 5
   shieldOBJ: {fileID: 1877658766}
   shieldCD: 5
   shieldCurrentCD: 5
   shieldMaxDuration: 0.5
-  slashObj: {fileID: 677487171}
+  slashObj: {fileID: 0}
   slashCD: 1.75
   slashCurrentCD: 1.75
   isSlashing: 0
