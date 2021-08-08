@@ -4835,7 +4835,7 @@ MonoBehaviour:
     perkType: 1
     removeOnSelection: 1
   - name: regen health
-    description: Regenerate health up to 7 if not hit in the last 8 seconds
+    description: Regenerate health up to 5 if not hit in the last 12 seconds
     perkType: 2
     removeOnSelection: 1
   magePerksID: 000000000100000002000000

@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     //Perk
     private int jumpHitboxPerkCounter = 0;
-    private float regenHealthMaxTimer = 8f;
+    private float regenHealthMaxTimer = 12f;
     private float regenHealthTimer = 5f;
 
     public Animator anim_knight, anim_mage, anim_ranger;
@@ -129,7 +129,7 @@ public class PlayerController : MonoBehaviour
         
 
         //PERK REGEN HEALTH
-        if (PlayerStats.regenHealthIfNotHit && health < 7)
+        if (PlayerStats.regenHealthIfNotHit && health < 5)
         {
             regenHealthTimer -= Time.deltaTime;
             if (regenHealthTimer <= 0)
