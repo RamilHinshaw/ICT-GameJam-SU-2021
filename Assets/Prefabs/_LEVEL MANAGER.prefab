@@ -2971,7 +2971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -64.5, y: -3.4763184}
+  m_AnchoredPosition: {x: -64.49997, y: -3.4763336}
   m_SizeDelta: {x: -699, y: -431.2473}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4872001558164806989
@@ -3724,7 +3724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 65, y: -3.4763184}
+  m_AnchoredPosition: {x: 65, y: -3.4763336}
   m_SizeDelta: {x: -699, y: -431.2473}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4872001558257624245
@@ -6356,7 +6356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.4180298, y: -3.4763184}
+  m_AnchoredPosition: {x: 3.4180298, y: -3.4763336}
   m_SizeDelta: {x: -658.7648, y: -360.2473}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4872001559345439682
@@ -6843,7 +6843,7 @@ MonoBehaviour:
   knightSword: {fileID: 4872001558033248901}
   spawner: {fileID: 4872001559470216950}
   arrow: {fileID: 3435391636580323764, guid: ec9c2b74a0dc32040b0dc09688273eb0, type: 3}
-  health: 7
+  health: 10
   laneSwapSpeed: 5
   anim_knight: {fileID: 4872001559315371071}
   anim_mage: {fileID: 1366356723034052397}
