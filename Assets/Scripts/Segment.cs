@@ -94,7 +94,7 @@ public class Segment
             newList[n] = value;
         }
 
-        Debug.Log("RANDOMIZED!");
+        //Debug.Log("RANDOMIZED!");
         return newList;
 
   

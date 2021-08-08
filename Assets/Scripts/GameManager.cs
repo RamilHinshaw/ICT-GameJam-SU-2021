@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
     private void InitPerks()
     {
         //Reset Available Perks if LVL 1
-        if (SceneManager.GetActiveScene().name == "Level 1")
+        if (SceneManager.GetActiveScene().name == "Level 1" || PlayerStats.availableMagePerksID.Count == 0)
         {
             PlayerStats.availableMagePerksID = magePerksID;
             PlayerStats.availableRangerPerksID = rangerPerksID;

@@ -7,7 +7,7 @@ public static class PlayerStats
 {
 
     public static int playerHealth = 10;
-    public static int swordSizeIncrease = 0;
+    public static bool swordSizeIncrease = false;
     public static bool regenHealthIfNotHit = false;
 
     public static int arrowCount = 5;
@@ -28,7 +28,7 @@ public static class PlayerStats
     public static void ResetPerks()
     {
       playerHealth = 10;
-      swordSizeIncrease = 0;
+      swordSizeIncrease = false;
       regenHealthIfNotHit = false;
 
       arrowCount = 5;
@@ -42,7 +42,7 @@ public static class PlayerStats
 
     public static void ActivatePerk(int perkID)
     {
-        UnityEngine.Debug.Log("PERK ACTIVATED!: " + perkID);
+        //UnityEngine.Debug.Log("PERK ACTIVATED!: " + perkID);
 
         Perk perk = GameManager.Instance.perks[perkID];
         PerkTypes perkType = perk.perkType;
@@ -50,11 +50,11 @@ public static class PlayerStats
         switch (perkType)
         {
             case PerkTypes.KnightHealthIncrease:
-                playerHealth += 5;
+                playerHealth += 6;
                 break;
 
             case PerkTypes.KnightSwordIncrease:
-                swordSizeIncrease++;
+                swordSizeIncrease=true;
                 break;
 
             case PerkTypes.KnightRegenHealth:
@@ -63,7 +63,7 @@ public static class PlayerStats
                 break;
 
             case PerkTypes.RangerArrowIncrease:
-                arrowCount += 4;
+                arrowCount += 5;
                 break;
 
             case PerkTypes.RangerArrowPiecing:

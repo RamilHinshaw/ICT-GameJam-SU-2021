@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     public float slashCurrentCD = 0.50f;
 
     public bool isSlashing = false;
-    public float timerSlash = 1f;
+    public float timerSlash = 0.0f;
     public GameObject knightSword;
 
 
@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
     //Perk
     private int jumpHitboxPerkCounter = 0;
+    private float regenHealthMaxTimer = 8f;
     private float regenHealthTimer = 5f;
 
     public Animator anim_knight, anim_mage, anim_ranger;
@@ -132,15 +133,23 @@ public class PlayerController : MonoBehaviour
         UpdateProgressGUI();
 
         //PERK REGEN HEALTH
-        if (PlayerStats.regenHealthIfNotHit && health < 10)
+        if (PlayerStats.regenHealthIfNotHit && health < 7)
         {
             regenHealthTimer -= Time.deltaTime;
             if (regenHealthTimer <= 0)
             {
                 health++;
                 GameManager.Instance.GuiManager.UpdateHealth(health);
-                regenHealthTimer = 5f;
+                regenHealthTimer = regenHealthMaxTimer;
             }
+        }
+    }
+
+    public void SwordCdReduce()
+    {
+        if (yVelocity != 0 && PlayerStats.swordSizeIncrease == true)
+        {
+            slashCurrentCD -= 0.35f;
         }
     }
 
@@ -162,7 +171,9 @@ public class PlayerController : MonoBehaviour
         //Slash
         if (Input.GetButtonDown("Slash") && slashCurrentCD <= 0)
         {
-            slashObj.Activate(PlayerStats.swordSizeIncrease + 1);
+            
+
+            slashObj.Activate();
 
             slashCurrentCD = slashCD;
             Telemetry.slashUsed++;
@@ -175,12 +186,12 @@ public class PlayerController : MonoBehaviour
             float swordScaling = SWORD_SCALE_INIT;
 
             //Perk
-            if (yVelocity != 0)
-                swordScaling += SWORD_SCALE_INIT * PlayerStats.swordSizeIncrease;
+            if (yVelocity != 0 && PlayerStats.swordSizeIncrease == true)
+                swordScaling += SWORD_SCALE_INIT * 2.5f;
 
             knightSword.transform.localScale = new Vector3(1.57f * swordScaling, 1.57f * swordScaling, 1.57f * swordScaling);
 
-            timerSlash = 1f;
+            timerSlash = 0.70f;
             isSlashing = true;
 
             audioSource.PlayOneShot(sfx_sword);
@@ -296,7 +307,7 @@ public class PlayerController : MonoBehaviour
 
                 //PERK
                 if (PlayerStats.regenHealthIfNotHit)
-                    regenHealthTimer = 5f;
+                    regenHealthTimer = regenHealthMaxTimer;
                 if (PlayerStats.arrowJumpPerk)
                     jumpHitboxPerkCounter = 5;
 
@@ -314,7 +325,7 @@ public class PlayerController : MonoBehaviour
             if (arrowCount < 5)
                 jumpHitboxPerkCounter++;
 
-            if (jumpHitboxPerkCounter >= 5)
+            if (jumpHitboxPerkCounter >= 4)
             {
                 arrowCount++;
                 GameManager.Instance.GuiManager.UpdateArrows(arrowCount);

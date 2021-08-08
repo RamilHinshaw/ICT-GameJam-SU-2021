@@ -12,8 +12,9 @@ public class SlashHitbox : MonoBehaviour
 
             if (script.obstacleType == Enums.ObstacleType.Enemies || script.obstacleType == Enums.ObstacleType.Web)
             {
-                Telemetry.slashHit++;
+                Telemetry.slashHit++;                
                 script.Explode();
+                GameManager.Instance.player.SwordCdReduce();
                 //Destroy(other.gameObject);
             }
 
