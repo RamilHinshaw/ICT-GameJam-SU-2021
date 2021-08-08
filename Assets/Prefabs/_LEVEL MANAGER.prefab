@@ -126,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562361024613738664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -262.6579}
+  m_LocalPosition: {x: -0, y: 0, z: -388}
   m_LocalScale: {x: 1, y: 1, z: 526.3158}
   m_Children: []
   m_Father: {fileID: 4872001557845820687}
@@ -147,7 +147,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562361024613738664}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4816,8 +4816,8 @@ MonoBehaviour:
     perkType: 3
     removeOnSelection: 0
   - name: Arrow Piecing
-    description: Arrows gain +1 to piecing. Arrows won't be destroyed when hiitting
-      an obstacle with the number of piecing stacks the arrow has
+    description: Arrows gain +1 to piecing. Arrows will survive an additional hit
+      based on the number of piecings
     perkType: 4
     removeOnSelection: 0
   - name: Arrow Jump
@@ -6825,15 +6825,15 @@ MonoBehaviour:
   fallSpeed: 15
   currentSpeed: 1
   topSpeed: 4.5
-  acceleration: 1
+  acceleration: 1.4
   accelerationReduction: 100
   arrowCD: 0.5
   arrowCurrentCD: 0.5
   arrowCount: 5
   arrowMaxCount: 5
   shieldOBJ: {fileID: 4872001559028280264}
-  shieldCD: 6.5
-  shieldCurrentCD: 6.5
+  shieldCD: 6
+  shieldCurrentCD: 6
   shieldMaxDuration: 0.5
   slashObj: {fileID: 4872001557845820675}
   slashCD: 1.85

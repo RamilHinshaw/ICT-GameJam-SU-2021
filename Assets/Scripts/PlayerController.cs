@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour
     public float timerSlash = 0.0f;
     public GameObject knightSword;
 
+    [Header("Knocked Down")]
+    private float knockoutTimer = 1.0f;
+    private bool isKnockedOut = false;
+
 
     [Header("OTHER")]
     public GameObject spawner;
@@ -84,32 +88,6 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         GameManager.Instance.player = this;
-
-
-        //if (resetPlayerStats == false)
-        //{
-        //    arrowCount = PlayerStats.arrowCount;
-        //    health = PlayerStats.playerHealth;
-        //    shieldMaxDuration = PlayerStats.shieldDuration;
-        //}
-
-        //else
-        //{
-        //    arrowCount = arrowMaxCount;
-        //    PlayerStats.shieldDuration = shieldMaxDuration;
-        //    PlayerStats.arrowCount = arrowCount;
-        //    PlayerStats.playerHealth = health;
-        //}
-
-        //shieldDuration = shieldMaxDuration;
-
-        //GameManager.Instance.GuiManager.SetupSliders(shieldCD, arrowCD, slashCD);
-        //GameManager.Instance.GuiManager.UpdateHealth(health);
-        //GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
-
-        ////Hardcoded
-        //GameManager.Instance.player = this;
-        //GameManager.Instance.playerStartPos = transform.position;
     }
 
     // Update is called once per frame
@@ -125,12 +103,30 @@ public class PlayerController : MonoBehaviour
         Arrow();
         Slash();
 
-        anim_mage.speed = anim_ranger.speed = currentSpeed * .5f;
+        UpdateProgressGUI();
 
+
+        //Animation from speed
+        //if (isKnockedOut)
+            //anim_mage.speed = anim_ranger.speed = 1f;
+
+        //else
+            anim_mage.speed = anim_ranger.speed = currentSpeed * .5f;
+
+
+        //Slashing countdown
         if (isSlashing == false)
             anim_knight.speed = currentSpeed * .5f;
 
-        UpdateProgressGUI();
+        if (isKnockedOut)
+        {
+            knockoutTimer -= Time.deltaTime;
+
+            if (knockoutTimer <= 0)
+                isKnockedOut = false;
+        }
+
+        
 
         //PERK REGEN HEALTH
         if (PlayerStats.regenHealthIfNotHit && health < 7)
@@ -160,9 +156,12 @@ public class PlayerController : MonoBehaviour
 
     private void Movement()
     {
+  
+
         if (currentSpeed < topSpeed)
             currentSpeed += acceleration * Time.deltaTime;
 
+        if (isKnockedOut) return;
         transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
     }
 
@@ -304,6 +303,8 @@ public class PlayerController : MonoBehaviour
 
 
                 health--;
+                isKnockedOut = true;
+                knockoutTimer = 0.75f;
 
                 //PERK
                 if (PlayerStats.regenHealthIfNotHit)
@@ -380,6 +381,7 @@ public class PlayerController : MonoBehaviour
     private void ChangeLanes()
     {
         //print(Input.GetAxisRaw("Horizontal"));
+        if (isKnockedOut) return;
 
         Vector3 targetLane = transform.position;
 
