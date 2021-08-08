@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Enums;
 
 //GameManger is a singleton Monobehavior
 public class GameManager : MonoBehaviour
@@ -49,6 +50,85 @@ public class GameManager : MonoBehaviour
     [HideInInspector]  public Vector3 playerStartPos;
     public float trackProgress = 0f; //100% if at goal
 
+    [Header("Perks")]
+    public List<Perk> perks = new List<Perk>();
+    public List<int> magePerksID = new List<int>();
+    public List<int> rangerPerksID = new List<int>();
+    public List<int> knightPerksID = new List<int>();
+
+    private void Start()
+    {
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
+        audioSource = GetComponent<AudioSource>();
+
+        Telemetry.Reset();
+
+        //Hardcoded if first level
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            Telemetry.GenerateUserID();
+
+            
+        }
+
+        else if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            Telemetry.userID = -1;
+        }
+
+        InitPerks();
+        InitPlayer();
+    }
+
+    private void InitPerks()
+    {
+        //Reset Available Perks if LVL 1
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            PlayerStats.availableMagePerksID = magePerksID;
+            PlayerStats.availableRangerPerksID = rangerPerksID;
+            PlayerStats.availableKnightPerksID = knightPerksID;
+
+            PlayerStats.ResetPerks();
+
+            PlayerStats.shieldDuration = player.shieldMaxDuration;
+            PlayerStats.arrowCount = player.arrowCount;
+            PlayerStats.playerHealth = player.health;
+        }
+
+        int rdmMagePerk = PlayerStats.availableMagePerksID[Random.Range(0, PlayerStats.availableMagePerksID.Count)];
+        int rdmRangerPerk = PlayerStats.availableRangerPerksID[Random.Range(0, PlayerStats.availableRangerPerksID.Count)];
+        int rdmKnightPerk = PlayerStats.availableKnightPerksID[Random.Range(0, PlayerStats.availableKnightPerksID.Count)];
+
+        GuiManager.SetupPerkCards(rdmMagePerk, rdmRangerPerk, rdmKnightPerk);
+    }
+
+    public void InitPlayer()
+    {
+        //CALLED BY PLAYER!
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            player.arrowCount = player.arrowMaxCount;
+        }
+
+        else
+        {
+            player.arrowCount = PlayerStats.arrowCount;
+            player.health = PlayerStats.playerHealth;
+            player.shieldMaxDuration = PlayerStats.shieldDuration;
+        }
+
+        player.shieldCurrentCD = player.shieldMaxDuration;
+
+        GuiManager.SetupSliders(player.shieldCD, player.arrowCD, player.slashCD);
+        GuiManager.UpdateHealth(player.health);
+        GuiManager.UpdateArrows(player.arrowCount);
+
+        playerStartPos = player.transform.position;
+    }
+
     public void UpdatePlayerProgress()
     {
         float fullTrack = Vector3.Distance(playerStartPos, endTrigger.transform.position);
@@ -77,18 +157,7 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(sfx_destroyed);
     }
 
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
 
-        Telemetry.Reset();
-
-        //Hardcoded if first level
-        if (SceneManager.GetActiveScene().name == "Level 1")
-            Telemetry.GenerateUserID();
-        else if (SceneManager.GetActiveScene().name == "Tutorial")
-            Telemetry.userID = -1;
-    }
 
     private void Update()
     {

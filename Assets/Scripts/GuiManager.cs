@@ -14,6 +14,8 @@ public class GuiManager : MonoBehaviour
     public Slider progress_track;
     public Text levelName;
 
+    public PerkCardGUI cardMage, cardRanger, cardKnight;
+
     public void Start()
     {
         levelName.text = SceneManager.GetActiveScene().name;
@@ -55,6 +57,13 @@ public class GuiManager : MonoBehaviour
         progress_ranger.value = ranger;
         progress_knight.value = knight;
         progress_mage.value = mage;
+    }
+
+    public void SetupPerkCards(int magePerkID, int rangerPerkID, int knightPerkID)
+    {
+        cardMage.UpdateCard(magePerkID);
+        cardRanger.UpdateCard(rangerPerkID);
+        cardKnight.UpdateCard(knightPerkID);
     }
 
     public void ShowCompleteScreen()

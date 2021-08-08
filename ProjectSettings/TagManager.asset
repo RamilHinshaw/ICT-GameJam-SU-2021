@@ -7,6 +7,7 @@ TagManager:
   - Obstacle
   - End
   - Track
+  - JumpHitbox
   layers:
   - Default
   - TransparentFX

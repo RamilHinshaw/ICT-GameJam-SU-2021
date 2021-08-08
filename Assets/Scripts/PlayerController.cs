@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     [Header("Arrow")]
     public float arrowCD = 1.0f;
     public float arrowCurrentCD = 0.50f;
-    private int arrowCount = 5;
+    public int arrowCount = 5;
     public int arrowMaxCount = 5;
 
     [Header("Shield")]
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     private bool shieldOn;
 
     [Header("Slash")]
-    public GameObject slashObj;
+    public Slash slashObj;
     public float slashCD = 1.0f;
     public float slashCurrentCD = 0.50f;
 
@@ -57,6 +57,10 @@ public class PlayerController : MonoBehaviour
     public float laneSwapSpeed = 5f;
     private bool usedMovementLastTime = false;
     private bool isDisabled = false;
+
+    //Perk
+    private int jumpHitboxPerkCounter = 0;
+    private float regenHealthTimer = 5f;
 
     public Animator anim_knight, anim_mage, anim_ranger;
 
@@ -78,30 +82,33 @@ public class PlayerController : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
 
-        if (resetPlayerStats == false)
-        {
-            arrowCount = PlayerStats.arrowCount;
-            health = PlayerStats.playerHealth;
-            shieldMaxDuration = PlayerStats.shieldDuration;
-        }
-
-        else
-        {
-            arrowCount = arrowMaxCount;
-            PlayerStats.shieldDuration = shieldMaxDuration;
-            PlayerStats.arrowCount = arrowCount;
-            PlayerStats.playerHealth = health;
-        }
-
-        shieldDuration = shieldMaxDuration;
-
-        GameManager.Instance.GuiManager.SetupSliders(shieldCD, arrowCD, slashCD);
-        GameManager.Instance.GuiManager.UpdateHealth(health);
-        GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
-
-        //Hardcoded
         GameManager.Instance.player = this;
-        GameManager.Instance.playerStartPos = transform.position;
+
+
+        //if (resetPlayerStats == false)
+        //{
+        //    arrowCount = PlayerStats.arrowCount;
+        //    health = PlayerStats.playerHealth;
+        //    shieldMaxDuration = PlayerStats.shieldDuration;
+        //}
+
+        //else
+        //{
+        //    arrowCount = arrowMaxCount;
+        //    PlayerStats.shieldDuration = shieldMaxDuration;
+        //    PlayerStats.arrowCount = arrowCount;
+        //    PlayerStats.playerHealth = health;
+        //}
+
+        //shieldDuration = shieldMaxDuration;
+
+        //GameManager.Instance.GuiManager.SetupSliders(shieldCD, arrowCD, slashCD);
+        //GameManager.Instance.GuiManager.UpdateHealth(health);
+        //GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
+
+        ////Hardcoded
+        //GameManager.Instance.player = this;
+        //GameManager.Instance.playerStartPos = transform.position;
     }
 
     // Update is called once per frame
@@ -124,9 +131,20 @@ public class PlayerController : MonoBehaviour
 
         UpdateProgressGUI();
 
+        //PERK REGEN HEALTH
+        if (PlayerStats.regenHealthIfNotHit && health < 10)
+        {
+            regenHealthTimer -= Time.deltaTime;
+            if (regenHealthTimer <= 0)
+            {
+                health++;
+                GameManager.Instance.GuiManager.UpdateHealth(health);
+                regenHealthTimer = 5f;
+            }
+        }
     }
 
-    private void UpdateProgressGUI()
+    public void UpdateProgressGUI()
     {
         GameManager.Instance.GuiManager.UpdateSliders(shieldCD-shieldCurrentCD, arrowCD-arrowCurrentCD, slashCD-slashCurrentCD);
     }
@@ -144,7 +162,7 @@ public class PlayerController : MonoBehaviour
         //Slash
         if (Input.GetButtonDown("Slash") && slashCurrentCD <= 0)
         {
-            slashObj.SetActive(true);
+            slashObj.Activate(PlayerStats.swordSizeIncrease + 1);
 
             slashCurrentCD = slashCD;
             Telemetry.slashUsed++;
@@ -153,7 +171,14 @@ public class PlayerController : MonoBehaviour
             anim_knight.SetTrigger("slash");
             anim_knight.speed = 1f;
 
-            knightSword.transform.localScale = new Vector3(1.57f * 4, 1.57f * 4, 1.57f * 4);
+            const float SWORD_SCALE_INIT = 3f;
+            float swordScaling = SWORD_SCALE_INIT;
+
+            //Perk
+            if (yVelocity != 0)
+                swordScaling += SWORD_SCALE_INIT * PlayerStats.swordSizeIncrease;
+
+            knightSword.transform.localScale = new Vector3(1.57f * swordScaling, 1.57f * swordScaling, 1.57f * swordScaling);
 
             timerSlash = 1f;
             isSlashing = true;
@@ -181,7 +206,7 @@ public class PlayerController : MonoBehaviour
     private void Shield()
     {
         //Shield
-        if (Input.GetButtonDown("Shield") && shieldCurrentCD <= 0)
+        if (Input.GetButtonDown("Shield") && shieldCurrentCD <= 0 && shieldOn == false)
         {
             print("SHIELD!");
             //Show shield
@@ -268,17 +293,36 @@ public class PlayerController : MonoBehaviour
 
 
                 health--;
+
+                //PERK
+                if (PlayerStats.regenHealthIfNotHit)
+                    regenHealthTimer = 5f;
+                if (PlayerStats.arrowJumpPerk)
+                    jumpHitboxPerkCounter = 5;
+
                 GameManager.Instance.GuiManager.UpdateHealth(health);
                 //audioSource.PlayOneShot(sfx_hurt);
-
-
             }
 
             if (currentSpeed < 0)
                 currentSpeed = 0;
         }
 
-        if (other.CompareTag("End"))
+        //PERK
+        else if (other.CompareTag("JumpHitbox") && PlayerStats.arrowJumpPerk)
+        {
+            if (arrowCount < 5)
+                jumpHitboxPerkCounter++;
+
+            if (jumpHitboxPerkCounter >= 5)
+            {
+                arrowCount++;
+                GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
+                jumpHitboxPerkCounter = 0;
+            }
+        }
+
+        else if (other.CompareTag("End"))
         {
             CompletedLevel();
         }

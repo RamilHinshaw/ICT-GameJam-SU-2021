@@ -97,6 +97,132 @@ Transform:
   m_Father: {fileID: 1784214315115244815}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1562361024613738664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7858771947894918800}
+  - component: {fileID: 1487183140345274939}
+  - component: {fileID: 6781339845448895924}
+  - component: {fileID: 418016518760892023}
+  - component: {fileID: 4121569357233563281}
+  - component: {fileID: 8839705508986352027}
+  m_Layer: 0
+  m_Name: hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7858771947894918800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562361024613738664}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -262.6579}
+  m_LocalScale: {x: 1, y: 1, z: 526.3158}
+  m_Children: []
+  m_Father: {fileID: 4872001557845820687}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1487183140345274939
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562361024613738664}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &6781339845448895924
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562361024613738664}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9a535709be3301041a6af583c19b9f65, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &418016518760892023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562361024613738664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4121569357233563281
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562361024613738664}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &8839705508986352027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562361024613738664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89eb7f08165425640acf45f2a9629d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1966882520593588870
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +668,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -1041,6 +1167,9 @@ MonoBehaviour:
   screen_levelCompleted: {fileID: 4872001558449976508}
   progress_track: {fileID: 4872001558049952048}
   levelName: {fileID: 4872001557477400270}
+  cardMage: {fileID: 1832822101439917224}
+  cardRanger: {fileID: 7634631210075972880}
+  cardKnight: {fileID: 5859858276418665056}
 --- !u!114 &4872001557746484460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,6 +1340,7 @@ GameObject:
   - component: {fileID: 4872001557829220297}
   - component: {fileID: 4872001557829220308}
   - component: {fileID: 4872001557829220311}
+  - component: {fileID: 1832822101439917224}
   - component: {fileID: 4872001557829220310}
   m_Layer: 5
   m_Name: Card 1
@@ -1275,6 +1405,20 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &1832822101439917224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4872001557829220296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27490ff38ae458946b6d25103ee2fd40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: {fileID: 4872001557544924756}
+  perkID: 0
 --- !u!114 &4872001557829220310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,10 +1463,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4872001557746484460}
-        m_TargetAssemblyTypeName: CardEffects, Assembly-CSharp
-        m_MethodName: IncreaseShieldDur
-        m_Mode: 3
+      - m_Target: {fileID: 1832822101439917224}
+        m_TargetAssemblyTypeName: PerkCardGUI, Assembly-CSharp
+        m_MethodName: ActivatePerk
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1469,7 +1613,6 @@ GameObject:
   - component: {fileID: 4872001557845820673}
   - component: {fileID: 4872001557845820672}
   - component: {fileID: 4872001557845820675}
-  - component: {fileID: 4872001557845820674}
   m_Layer: 0
   m_Name: Slash
   m_TagString: Untagged
@@ -1485,9 +1628,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4872001557845820677}
   m_LocalRotation: {x: -0, y: -0.7071069, z: 0, w: 0.70710665}
-  m_LocalPosition: {x: 0.8266, y: 0, z: 0.032}
-  m_LocalScale: {x: 0.31193, y: 0.41590667, z: 0.76845956}
-  m_Children: []
+  m_LocalPosition: {x: 0.4431, y: 0, z: 0.032}
+  m_LocalScale: {x: 0.31193, y: 0.41590667, z: 0.0007847894}
+  m_Children:
+  - {fileID: 7858771947894918800}
   m_Father: {fileID: 4872001559436779377}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1550,7 +1694,7 @@ BoxCollider:
   m_GameObject: {fileID: 4872001557845820677}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1567,22 +1711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.5
---- !u!54 &4872001557845820674
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4872001557845820677}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  hitbox: {fileID: 1562361024613738664}
 --- !u!1 &4872001557920375883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,7 +2567,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -2630,7 +2759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -64.5, y: -3.4763336}
+  m_AnchoredPosition: {x: -64.5, y: -3.476303}
   m_SizeDelta: {x: -699, y: -431.2473}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4872001558164806989
@@ -3383,7 +3512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 65, y: -3.4763336}
+  m_AnchoredPosition: {x: 65, y: -3.476303}
   m_SizeDelta: {x: -699, y: -431.2473}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4872001558257624245
@@ -4455,6 +4584,49 @@ MonoBehaviour:
   endTrigger: {fileID: 0}
   playerStartPos: {x: 0, y: 0, z: 0}
   trackProgress: 0
+  perks:
+  - name: Increase Shield Duration
+    description: Increase shield duration by 1 second
+    perkType: 6
+    removeOnSelection: 0
+  - name: Shield gives arrow when hit log
+    description: When the shield destroys a log, you gain 1 arrow
+    perkType: 7
+    removeOnSelection: 1
+  - name: Reduce cd of other abilities when other obstacles hit
+    description: Decrease cooldown of other abilites by 0.5 seconds if the new shield
+      hits an obstacle on first hit
+    perkType: 8
+    removeOnSelection: 1
+  - name: Increase arrow count
+    description: Increase arrow count by 4
+    perkType: 3
+    removeOnSelection: 0
+  - name: Arrow Piecing
+    description: Arrows gain +1 to piecing. Arrows won't be destroyed when hiitting
+      an obstacle with the number of piecing stacks the arrow has
+    perkType: 4
+    removeOnSelection: 0
+  - name: Arrow Jump
+    description: After successfully jumping over 5 obstacles without getting hit,
+      gain 1 arrow if less than 5 arrows
+    perkType: 5
+    removeOnSelection: 1
+  - name: Increase health
+    description: Restore Health by 5
+    perkType: 0
+    removeOnSelection: 0
+  - name: increase sword size
+    description: Sword size increases when attacking in the air. Sword will hit further
+    perkType: 1
+    removeOnSelection: 0
+  - name: regen health
+    description: Regenerate health up to 10 if not hit in the last 5 seconds
+    perkType: 2
+    removeOnSelection: 1
+  magePerksID: 000000000100000002000000
+  rangerPerksID: 030000000400000005000000
+  knightPerksID: 060000000700000008000000
 --- !u!114 &4872001558664239552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4886,6 +5058,7 @@ GameObject:
   - component: {fileID: 4872001558902383366}
   - component: {fileID: 4872001558902383365}
   - component: {fileID: 4872001558902383364}
+  - component: {fileID: 7634631210075972880}
   - component: {fileID: 4872001558902383367}
   m_Layer: 5
   m_Name: Card 2
@@ -4950,6 +5123,20 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &7634631210075972880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4872001558902383481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27490ff38ae458946b6d25103ee2fd40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: {fileID: 4872001558070773299}
+  perkID: 0
 --- !u!114 &4872001558902383367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4994,14 +5181,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4872001557746484460}
-        m_TargetAssemblyTypeName: CardEffects, Assembly-CSharp
-        m_MethodName: IncreaseArrowCount
-        m_Mode: 3
+      - m_Target: {fileID: 7634631210075972880}
+        m_TargetAssemblyTypeName: PerkCardGUI, Assembly-CSharp
+        m_MethodName: ActivatePerk
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5523,6 +5710,7 @@ GameObject:
   - component: {fileID: 4872001559198681771}
   - component: {fileID: 4872001559198681782}
   - component: {fileID: 4872001559198681769}
+  - component: {fileID: 5859858276418665056}
   - component: {fileID: 4872001559198681768}
   m_Layer: 5
   m_Name: Card 3
@@ -5587,6 +5775,20 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &5859858276418665056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4872001559198681770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27490ff38ae458946b6d25103ee2fd40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: {fileID: 4872001559402413109}
+  perkID: 0
 --- !u!114 &4872001559198681768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5631,14 +5833,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4872001557746484460}
-        m_TargetAssemblyTypeName: CardEffects, Assembly-CSharp
-        m_MethodName: IncreaseHealth
-        m_Mode: 3
+      - m_Target: {fileID: 5859858276418665056}
+        m_TargetAssemblyTypeName: PerkCardGUI, Assembly-CSharp
+        m_MethodName: ActivatePerk
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5940,7 +6142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.4180298, y: -3.4763336}
+  m_AnchoredPosition: {x: 3.4180298, y: -3.476303}
   m_SizeDelta: {x: -658.7648, y: -360.2473}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4872001559345439682
@@ -6265,7 +6467,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -6365,7 +6567,7 @@ GameObject:
   - component: {fileID: 4872001559436779388}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6413,12 +6615,13 @@ MonoBehaviour:
   accelerationReduction: 100
   arrowCD: 0.5
   arrowCurrentCD: 0.5
+  arrowCount: 5
   arrowMaxCount: 5
   shieldOBJ: {fileID: 4872001559028280264}
-  shieldCD: 5
-  shieldCurrentCD: 5
+  shieldCD: 6
+  shieldCurrentCD: 6
   shieldMaxDuration: 0.5
-  slashObj: {fileID: 4872001557845820677}
+  slashObj: {fileID: 4872001557845820675}
   slashCD: 1.75
   slashCurrentCD: 1.75
   isSlashing: 0
@@ -7663,15 +7866,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b56b218a7a883bb45b13cd098d8db5f3, type: 3}
---- !u!4 &4906226387885788503 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b56b218a7a883bb45b13cd098d8db5f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 4872001558292327100}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1366356723034052397 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: b56b218a7a883bb45b13cd098d8db5f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4872001558292327100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4906226387885788503 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b56b218a7a883bb45b13cd098d8db5f3,
     type: 3}
   m_PrefabInstance: {fileID: 4872001558292327100}
   m_PrefabAsset: {fileID: 0}
@@ -7774,15 +7977,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: aac599aae7a4a5449bc6689a4cd3400e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce8476153edd7e24685db268742fe1e8, type: 3}
---- !u!1 &5718931934592231582 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ce8476153edd7e24685db268742fe1e8,
-    type: 3}
-  m_PrefabInstance: {fileID: 4872001558441416143}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4906226387703149092 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ce8476153edd7e24685db268742fe1e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 4872001558441416143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5718931934592231582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ce8476153edd7e24685db268742fe1e8,
     type: 3}
   m_PrefabInstance: {fileID: 4872001558441416143}
   m_PrefabAsset: {fileID: 0}

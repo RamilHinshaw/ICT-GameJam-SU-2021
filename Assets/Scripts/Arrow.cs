@@ -6,9 +6,19 @@ public class Arrow : MonoBehaviour
 {
     public float lifeTime = 5f;
     public float speed = 4f;
-    public bool piercing = false;
+    public int piercing = 0;
 
     // Update is called once per frame
+    private void Start()
+    {
+        piercing = PlayerStats.arrowPiercing;
+    }
+
+    private void OnEnable()
+    {
+        piercing = PlayerStats.arrowPiercing;
+    }
+
     void Update()
     {
         transform.Translate(transform.forward * speed * Time.deltaTime);
@@ -31,16 +41,24 @@ public class Arrow : MonoBehaviour
                 script.Explode();
                 Telemetry.arrowsHit++;
 
-                if (piercing == false)
+                if (piercing <= 0)
                 {
                     Destroy(gameObject);
                 }
+
+                piercing--;
             }
 
-            else if (script.obstacleType == Enums.ObstacleType.Web && piercing == true)
+            //else if (script.obstacleType == Enums.ObstacleType.Web && piercing > 0)
+            //{
+            //    piercing--;
+            //    script.Explode();
+            //    // Destroy(gameObject);
+            //}
+
+            else
             {
-                script.Explode();
-                // Destroy(gameObject);
+                Destroy(gameObject);
             }
                 
         }
