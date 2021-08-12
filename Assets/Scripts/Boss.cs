@@ -12,6 +12,8 @@ public class Boss : MonoBehaviour
     public float attackDelay = 0.75f;
     public float maxIdleTimer = 5f;
 
+    [Header("The lower it is, the more difficult the dragon is!")]
+    [Range(0.01f, 1f)]
     public float difficultyModifier = 0.15f;
    // private float currentDifficulty;
 
