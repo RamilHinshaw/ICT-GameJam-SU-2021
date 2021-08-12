@@ -176,6 +176,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void RecordTelemetryData()
+    {
+        if (GameManager.Instance.isCSVLogging)
+        {
+            Telemetry.level = SceneManager.GetActiveScene().name;
+            Telemetry.timeInStage = GameManager.Instance.timerForLevel;
+            Telemetry.trackProgress = GameManager.Instance.trackProgress;
+            WriteToCSV();
+        }
+    }
+
+    private void WriteToCSV()
+    {
+        string filename = Application.dataPath + "/telemetrics.csv";
+        Debug.Log("WRITTEN TO " + filename);
+        Telemetry.WriteToFile(filename);
+    }
+
 }
 
 

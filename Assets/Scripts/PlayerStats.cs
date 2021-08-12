@@ -93,5 +93,8 @@ public static class PlayerStats
             default:
                 break;
         }
+
+        //Telemetry
+        Telemetry.perkSelected = perk.name;
     }
 }

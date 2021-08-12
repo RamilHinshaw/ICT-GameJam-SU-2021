@@ -1687,6 +1687,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4872001558664239554}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RecordTelemetryData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4872001558664239552}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: LoadNextLevel
@@ -4803,11 +4815,11 @@ MonoBehaviour:
     description: Increase shield duration by 1 second
     perkType: 6
     removeOnSelection: 0
-  - name: Shield gives arrow when hit log
+  - name: Shield gives arrows
     description: When the shield destroys a log, you gain 1 arrow
     perkType: 7
     removeOnSelection: 1
-  - name: Reduce cd of other abilities when other obstacles hit
+  - name: Shield Reduce Other CD
     description: Refreshes cooldown of other abilites if the new shield hits an obstacle
     perkType: 8
     removeOnSelection: 1
@@ -4829,12 +4841,12 @@ MonoBehaviour:
     description: Restore Health by 6
     perkType: 0
     removeOnSelection: 0
-  - name: increase sword size
+  - name: Increase sword size
     description: Using sword while airborne reduces cooldown for sword. Sword size
       increase in air
     perkType: 1
     removeOnSelection: 1
-  - name: regen health
+  - name: Regen health
     description: Regenerate health up to 5 if not hit in the last 12 seconds
     perkType: 2
     removeOnSelection: 1
@@ -5395,7 +5407,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7634631210075972880}
+      - m_Target: {fileID: 1832822101439917224}
         m_TargetAssemblyTypeName: PerkCardGUI, Assembly-CSharp
         m_MethodName: ActivatePerk
         m_Mode: 1
@@ -5403,6 +5415,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4872001558664239554}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RecordTelemetryData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6047,7 +6071,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5859858276418665056}
+      - m_Target: {fileID: 1832822101439917224}
         m_TargetAssemblyTypeName: PerkCardGUI, Assembly-CSharp
         m_MethodName: ActivatePerk
         m_Mode: 1
@@ -6055,6 +6079,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4872001558664239554}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RecordTelemetryData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
