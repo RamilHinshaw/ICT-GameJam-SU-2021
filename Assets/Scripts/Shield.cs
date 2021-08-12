@@ -34,13 +34,13 @@ public class Shield : MonoBehaviour
             }
           
             //PERK
-            if (PlayerStats.shieldReduceOtherCD && shieldHitOnce == false)
+            if (PlayerStats.shieldReduceOtherCD)
             {
                 shieldHitOnce = true;
 
                 var player = GameManager.Instance.player;
-                player.arrowCurrentCD -= 0.5f;
-                player.slashCurrentCD -= 0.5f;
+                player.arrowCurrentCD -= 99.5f;
+                player.slashCurrentCD -= 99.5f;
 
                 player.UpdateProgressGUI();
             }

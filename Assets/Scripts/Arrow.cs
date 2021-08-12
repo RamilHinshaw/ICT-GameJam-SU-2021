@@ -56,11 +56,19 @@ public class Arrow : MonoBehaviour
             //    // Destroy(gameObject);
             //}
 
+
+
             else
             {
                 Destroy(gameObject);
             }
                 
+        }
+
+        else if (other.transform.CompareTag("Boss"))
+        {
+            other.GetComponent<Boss>().Damage();
+            Destroy(gameObject);
         }
     }
 }

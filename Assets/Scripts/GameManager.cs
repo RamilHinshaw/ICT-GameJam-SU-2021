@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public GameObject endTrigger;
     [HideInInspector]  public Vector3 playerStartPos;
     public float trackProgress = 0f; //100% if at goal
+    public bool disableTrackProgress = false;
 
     [Header("Perks")]
     public List<Perk> perks = new List<Perk>();
@@ -164,7 +165,9 @@ public class GameManager : MonoBehaviour
         GuiManager.Update();
 
         timerForLevel += Time.deltaTime;
-        UpdatePlayerProgress();
+
+        if (!disableTrackProgress)
+            UpdatePlayerProgress();
 
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start"))

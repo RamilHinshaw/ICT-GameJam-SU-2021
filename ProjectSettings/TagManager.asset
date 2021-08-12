@@ -8,6 +8,8 @@ TagManager:
   - End
   - Track
   - JumpHitbox
+  - Boss
+  - Treasure
   layers:
   - Default
   - TransparentFX

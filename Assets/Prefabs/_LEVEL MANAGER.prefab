@@ -126,8 +126,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562361024613738664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -388}
-  m_LocalScale: {x: 1, y: 1, z: 526.3158}
+  m_LocalPosition: {x: -0, y: -0.5751, z: -388}
+  m_LocalScale: {x: 1, y: 2.1503, z: 526.3158}
   m_Children: []
   m_Father: {fileID: 4872001557845820687}
   m_RootOrder: 0
@@ -1840,8 +1840,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4872001557845820677}
   m_LocalRotation: {x: -0, y: -0.7071069, z: 0, w: 0.70710665}
-  m_LocalPosition: {x: 0.22, y: 0, z: 0.032}
-  m_LocalScale: {x: 0.31193, y: 0.41590667, z: 0.00016339314}
+  m_LocalPosition: {x: 0.227, y: 0, z: 0.032}
+  m_LocalScale: {x: 0.31193, y: 0.41590667, z: 0.00022875039}
   m_Children:
   - {fileID: 7858771947894918800}
   m_Father: {fileID: 4872001559436779377}
@@ -2698,7 +2698,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 4872001557667562974}
   m_FillRect: {fileID: 4872001558354524413}
   m_HandleRect: {fileID: 4872001557667562961}
@@ -2971,7 +2971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -64.49997, y: -3.4763336}
+  m_AnchoredPosition: {x: -64.5, y: -3.4763336}
   m_SizeDelta: {x: -699, y: -431.2473}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4872001558164806989
@@ -4797,6 +4797,7 @@ MonoBehaviour:
   endTrigger: {fileID: 0}
   playerStartPos: {x: 0, y: 0, z: 0}
   trackProgress: 0
+  disableTrackProgress: 0
   perks:
   - name: Increase Shield Duration
     description: Increase shield duration by 1 second
@@ -4807,8 +4808,7 @@ MonoBehaviour:
     perkType: 7
     removeOnSelection: 1
   - name: Reduce cd of other abilities when other obstacles hit
-    description: Decrease cooldown of other abilites by 0.5 seconds if the new shield
-      hits an obstacle on first hit
+    description: Refreshes cooldown of other abilites if the new shield hits an obstacle
     perkType: 8
     removeOnSelection: 1
   - name: Increase arrow count
@@ -6841,19 +6841,23 @@ MonoBehaviour:
   isSlashing: 0
   timerSlash: 2
   knightSword: {fileID: 4872001558033248901}
+  lanePos: 0
   spawner: {fileID: 4872001559470216950}
   arrow: {fileID: 3435391636580323764, guid: ec9c2b74a0dc32040b0dc09688273eb0, type: 3}
   health: 10
   laneSwapSpeed: 5
+  isDisabled: 0
+  lockedMovement: 0
   anim_knight: {fileID: 4872001559315371071}
   anim_mage: {fileID: 1366356723034052397}
   anim_ranger: {fileID: 4872001558668828372}
   resetPlayerStats: 1
   sfx_jump: {fileID: 8300000, guid: 47e0a051dff00c64d8c76155cd568e39, type: 3}
+  sfx_pickup: {fileID: 8300000, guid: 330613c7c2da905449ed5dc8ac088bf2, type: 3}
   sfx_hurt: {fileID: 8300000, guid: 5c24ceffed8c0b94fba766ca40f050fd, type: 3}
   sfx_shield: {fileID: 8300000, guid: 1b5113dcd32335c42afc6a726b5f677b, type: 3}
   sfx_arrow: {fileID: 8300000, guid: 28f1dbedd2bba1d4e88ff4a49e0dffb3, type: 3}
-  sfx_sword: {fileID: 8300000, guid: 0236b0f3e6335da41a48bfb7d4068627, type: 3}
+  sfx_sword: {fileID: 8300000, guid: 17800dd9c5594e949b98e60d05ec845b, type: 3}
 --- !u!65 &4872001559436779390
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -17,9 +17,11 @@ public class TrackGenerator : MonoBehaviour
     public List<GameObject> obstaclePrefabs = new List<GameObject>();
 
     public bool ignoreTrack = false;
+    public bool ignoreTextureScaling = false;
     private GameObject trackObj;
     private Renderer trackRend;
     public GameObject endZone;
+    public float textureScaleMultiplier = 1f;
 
     private GameObject trackContainer;
 
@@ -90,9 +92,12 @@ public class TrackGenerator : MonoBehaviour
 
         //Stretch Track
         zSpawnOffset += 15f;
+        print(zSpawnOffset);
 
-        if (!ignoreTrack)
+        if (ignoreTrack == false)
             trackObj.transform.localScale = new Vector3(trackObj.transform.localScale.x, trackObj.transform.localScale.y, zSpawnOffset);
+
+        if (ignoreTextureScaling) return;
 
         //END ZONE
         var endObj = Instantiate(endZone, new Vector3(CENTER_SPAWN, 4.23f, START_SPAWN_Z - zSpawnOffset + 5), Quaternion.identity);
@@ -101,7 +106,7 @@ public class TrackGenerator : MonoBehaviour
 
         //Adjust Track Texture
         Material mat = trackRend.material;
-        mat.SetTextureScale("_MainTex", new Vector2(5, zSpawnOffset + zSpawnOffset * 0.75f) );
+        mat.SetTextureScale("_MainTex", new Vector2(5, (zSpawnOffset + zSpawnOffset * 0.75f) * textureScaleMultiplier) );
         //print(zSpawnOffset);
     }
 }

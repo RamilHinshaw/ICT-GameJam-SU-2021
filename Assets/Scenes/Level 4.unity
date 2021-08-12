@@ -1212,7 +1212,9 @@ MonoBehaviour:
   - {fileID: 6388939140754811867, guid: 4978b27ba5ee9e6498cf61716d1cd3c6, type: 3}
   - {fileID: 6192690515352653396, guid: 5d2bc67b09219f24cb349c2fb1b47972, type: 3}
   ignoreTrack: 0
+  ignoreTextureScaling: 0
   endZone: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
+  textureScaleMultiplier: 1
 --- !u!4 &1052817175
 Transform:
   m_ObjectHideFlags: 0
@@ -1569,7 +1571,9 @@ MonoBehaviour:
   generatedTrack: []
   obstaclePrefabs: []
   ignoreTrack: 0
+  ignoreTextureScaling: 0
   endZone: {fileID: 0}
+  textureScaleMultiplier: 1
 --- !u!4 &1438533884
 Transform:
   m_ObjectHideFlags: 0
@@ -2156,6 +2160,11 @@ PrefabInstance:
     - target: {fileID: 4872001558354524413, guid: 0811f23bdfefbf44a88e3c42c992e76b,
         type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872001558449976508, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4872001558560084431, guid: 0811f23bdfefbf44a88e3c42c992e76b,

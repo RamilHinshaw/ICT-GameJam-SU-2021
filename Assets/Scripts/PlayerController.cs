@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 
 
-    private int position = 0;
+    
 
     //jUMP
     [Header("Jump")]
@@ -55,12 +55,14 @@ public class PlayerController : MonoBehaviour
 
 
     [Header("OTHER")]
+    public int lanePos = 0;
     public GameObject spawner;
     public GameObject arrow;
     public int health = 3;
     public float laneSwapSpeed = 5f;
     private bool usedMovementLastTime = false;
-    private bool isDisabled = false;
+    public bool isDisabled = false;
+    public bool lockedMovement = false;
 
     //Perk
     private int jumpHitboxPerkCounter = 0;
@@ -72,7 +74,7 @@ public class PlayerController : MonoBehaviour
     public bool resetPlayerStats = false;
 
     [Header("AUDIO")]
-    public AudioClip sfx_jump;
+    public AudioClip sfx_jump, sfx_pickup;
     public AudioClip sfx_hurt, sfx_shield, sfx_arrow, sfx_sword;
     private AudioSource audioSource;
 
@@ -162,7 +164,9 @@ public class PlayerController : MonoBehaviour
             currentSpeed += acceleration * Time.deltaTime;
 
         if (isKnockedOut) return;
-        transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
+
+        if (lockedMovement == false)
+            transform.Translate(transform.forward * currentSpeed * Time.deltaTime);
     }
 
     private void Slash()
@@ -218,7 +222,7 @@ public class PlayerController : MonoBehaviour
         //Shield
         if (Input.GetButtonDown("Shield") && shieldCurrentCD <= 0 && shieldOn == false)
         {
-            print("SHIELD!");
+            //print("SHIELD!");
             //Show shield
             shieldOBJ.SetActive(true);
             shieldOn = true;
@@ -329,6 +333,7 @@ public class PlayerController : MonoBehaviour
             if (jumpHitboxPerkCounter >= 4)
             {
                 arrowCount++;
+                audioSource.PlayOneShot(sfx_pickup);
                 GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
                 jumpHitboxPerkCounter = 0;
             }
@@ -337,6 +342,14 @@ public class PlayerController : MonoBehaviour
         else if (other.CompareTag("End"))
         {
             CompletedLevel();
+        }
+
+        else if (other.CompareTag("Treasure"))
+        {
+            arrowCount++;
+            audioSource.PlayOneShot(sfx_pickup);
+            GameManager.Instance.GuiManager.UpdateArrows(arrowCount);
+            Destroy(other.gameObject);
         }
     }
 
@@ -386,17 +399,17 @@ public class PlayerController : MonoBehaviour
         Vector3 targetLane = transform.position;
 
 
-        if (Input.GetAxisRaw("Horizontal") > 0 && position != 1 && usedMovementLastTime == false)
+        if (Input.GetAxisRaw("Horizontal") > 0 && lanePos != 1 && usedMovementLastTime == false)
         {
             targetLane = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-            position++;
+            lanePos++;
             usedMovementLastTime = true;
         }
 
-        else if (Input.GetAxisRaw("Horizontal") < 0 && position != -1 && usedMovementLastTime == false)
+        else if (Input.GetAxisRaw("Horizontal") < 0 && lanePos != -1 && usedMovementLastTime == false)
         {
             targetLane = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-            position--;
+            lanePos--;
             usedMovementLastTime = true;
         }
 
