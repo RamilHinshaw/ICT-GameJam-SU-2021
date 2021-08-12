@@ -149,7 +149,7 @@ public class Boss : MonoBehaviour
         if (enraged == true)
         {
             enraged = false;
-            timer *= 2f;
+            timer *= 2.5f;
         }
 
         behavior = Behavior.Idle;
@@ -212,6 +212,7 @@ public class Boss : MonoBehaviour
         if (GameManager.Instance.player.isDisabled) return;
 
         GameManager.Instance.player.isDisabled = true;
+        GameManager.Instance.player.currentSpeed = 0;
         GameManager.Instance.player.DisableAnim();
 
         audioSource.PlayOneShot(sfx_death);

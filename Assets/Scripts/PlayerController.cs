@@ -127,7 +127,6 @@ public class PlayerController : MonoBehaviour
             if (knockoutTimer <= 0)
                 isKnockedOut = false;
         }
-
         
 
         //PERK REGEN HEALTH
@@ -137,10 +136,14 @@ public class PlayerController : MonoBehaviour
             if (regenHealthTimer <= 0)
             {
                 health++;
+                audioSource.PlayOneShot(sfx_pickup);
                 GameManager.Instance.GuiManager.UpdateHealth(health);
                 regenHealthTimer = regenHealthMaxTimer;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Slash))
+            CompletedLevel();
     }
 
     public void SwordCdReduce()
@@ -281,6 +284,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (isDisabled) return;
 
         //Lose Speed
         if (other.CompareTag("Obstacle"))

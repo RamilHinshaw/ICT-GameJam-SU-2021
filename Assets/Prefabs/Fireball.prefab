@@ -298,8 +298,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 23.70988, y: 17.880407, z: 0.9443452}
-  m_Center: {x: 0.25754136, y: -0.13190296, z: 8.487175}
+  m_Size: {x: 23.70988, y: 17.880407, z: 2.7391708}
+  m_Center: {x: 0.25754136, y: -0.13190296, z: 7.0327787}
 --- !u!95 &3308958153519063687
 Animator:
   serializedVersion: 3
@@ -332,5 +332,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 10
-  speed: 11
+  speed: 10
   speedModifier: 0.24
