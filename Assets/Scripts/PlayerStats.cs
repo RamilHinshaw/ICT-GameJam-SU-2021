@@ -55,6 +55,7 @@ public static class PlayerStats
 
             case PerkTypes.KnightSwordIncrease:
                 swordSizeIncrease=true;
+                if (perk.removeOnSelection) availableKnightPerksID.Remove(perkID);
                 break;
 
             case PerkTypes.KnightRegenHealth:
