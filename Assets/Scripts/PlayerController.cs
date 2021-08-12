@@ -314,7 +314,7 @@ public class PlayerController : MonoBehaviour
                 if (PlayerStats.regenHealthIfNotHit)
                     regenHealthTimer = regenHealthMaxTimer;
                 if (PlayerStats.arrowJumpPerk)
-                    jumpHitboxPerkCounter = 5;
+                    jumpHitboxPerkCounter = 0;
 
                 GameManager.Instance.GuiManager.UpdateHealth(health);
                 //audioSource.PlayOneShot(sfx_hurt);
@@ -330,7 +330,7 @@ public class PlayerController : MonoBehaviour
             if (arrowCount < 5)
                 jumpHitboxPerkCounter++;
 
-            if (jumpHitboxPerkCounter >= 4)
+            if (jumpHitboxPerkCounter >= 4 && arrowCount < 5)
             {
                 arrowCount++;
                 audioSource.PlayOneShot(sfx_pickup);

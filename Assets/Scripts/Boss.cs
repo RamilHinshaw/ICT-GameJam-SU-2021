@@ -211,6 +211,8 @@ public class Boss : MonoBehaviour
     {
         if (GameManager.Instance.player.isDisabled) return;
 
+        GameManager.Instance.player.isDisabled = true;
+
         audioSource.PlayOneShot(sfx_death);
         gameManagerAudioSource.Stop();
         gameManagerAudioSource.clip = music_fanfare;
