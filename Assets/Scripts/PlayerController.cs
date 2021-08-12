@@ -422,6 +422,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void DisableAnim()
+    {
+        anim_knight.enabled = false;
+        anim_mage.enabled = false;
+        anim_ranger.enabled = false;
+    }
+
     private void Death()
     {
         GameManager.Instance.PlayDeath();

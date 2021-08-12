@@ -212,6 +212,7 @@ public class Boss : MonoBehaviour
         if (GameManager.Instance.player.isDisabled) return;
 
         GameManager.Instance.player.isDisabled = true;
+        GameManager.Instance.player.DisableAnim();
 
         audioSource.PlayOneShot(sfx_death);
         gameManagerAudioSource.Stop();
