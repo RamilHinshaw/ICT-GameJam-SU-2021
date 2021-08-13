@@ -95,6 +95,7 @@ public static class PlayerStats
         }
 
         //Telemetry
+        UnityEngine.Debug.Log(perkID);
         Telemetry.perkSelected = perk.name;
     }
 }

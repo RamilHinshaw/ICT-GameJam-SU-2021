@@ -5407,7 +5407,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1832822101439917224}
+      - m_Target: {fileID: 7634631210075972880}
         m_TargetAssemblyTypeName: PerkCardGUI, Assembly-CSharp
         m_MethodName: ActivatePerk
         m_Mode: 1
@@ -6071,7 +6071,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1832822101439917224}
+      - m_Target: {fileID: 5859858276418665056}
         m_TargetAssemblyTypeName: PerkCardGUI, Assembly-CSharp
         m_MethodName: ActivatePerk
         m_Mode: 1
