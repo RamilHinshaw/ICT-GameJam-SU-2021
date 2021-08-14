@@ -11,6 +11,7 @@ public class ProjectilePlayerSpeed : MonoBehaviour
     void Update()
     {
         transform.Translate(transform.forward * ((GameManager.Instance.player.currentSpeed * speedModifier) + 0.01f) * speed * Time.deltaTime);
+        //transform.Translate( (transform.forward * speed * Time.deltaTime) + (transform.forward * GameManager.Instance.player.currentSpeed * Time.deltaTime) );
 
         lifeTime -= Time.deltaTime;
 

@@ -68,7 +68,7 @@ public class GuiManager : MonoBehaviour
 
     public void ShowCompleteScreen()
     {
-        RecordTelemetryData();
+        //RecordTelemetryData();
 
         screen_levelCompleted.SetActive(true);
 
@@ -76,26 +76,8 @@ public class GuiManager : MonoBehaviour
 
     public void ShowDeathScreen()
     {
-        RecordTelemetryData();
+        //RecordTelemetryData();
         screen_death.SetActive(true);
-    }
-
-    private void RecordTelemetryData()
-    {
-        if (GameManager.Instance.isCSVLogging)
-        {
-            Telemetry.level = SceneManager.GetActiveScene().name;
-            Telemetry.timeInStage = GameManager.Instance.timerForLevel;
-            Telemetry.trackProgress = GameManager.Instance.trackProgress;
-            WriteToCSV();
-        }
-    }
-
-    private void WriteToCSV()
-    {
-        string filename = Application.dataPath + "/telemetrics.csv";
-        Debug.Log("WRITTEN TO " + filename);
-        Telemetry.WriteToFile(filename);
     }
 
 }

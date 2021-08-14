@@ -30,6 +30,8 @@ public static class Telemetry
 
     public static float trackProgress = 0f;
 
+    public static string perkSelected = "NULL";
+
     public static void Reset()
     {
         //userID = -1;
@@ -50,6 +52,7 @@ public static class Telemetry
         arrowsLeft = 0;
         damagedFromRock = damagedFromDragon = damagedFromLog = damagedFromWeb = 0;
         trackProgress = 0f;
+        perkSelected = "NULL";
 
     }
 
@@ -87,7 +90,8 @@ public static class Telemetry
             damagedFromWeb.ToString() + "," +
             damagedFromDragon.ToString() + "," +
             damagedFromLog.ToString() + "," +
-            UnityEngine.Mathf.Ceil(trackProgress).ToString() + "%,"
+            UnityEngine.Mathf.Ceil(trackProgress).ToString() + "%," +
+            perkSelected
 
             );
 
