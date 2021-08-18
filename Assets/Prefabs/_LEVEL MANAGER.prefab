@@ -1852,8 +1852,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4872001557845820677}
   m_LocalRotation: {x: -0, y: -0.7071069, z: 0, w: 0.70710665}
-  m_LocalPosition: {x: 0.227, y: 0, z: 0.032}
-  m_LocalScale: {x: 0.31193, y: 0.41590667, z: 0.00022875039}
+  m_LocalPosition: {x: 0.14, y: 0, z: 0.032}
+  m_LocalScale: {x: 0.31193, y: 0.41590667, z: 0.0004939603}
   m_Children:
   - {fileID: 7858771947894918800}
   m_Father: {fileID: 4872001559436779377}
@@ -6877,6 +6877,7 @@ MonoBehaviour:
   isSlashing: 0
   timerSlash: 2
   knightSword: {fileID: 4872001558033248901}
+  invincibilityMaxTimer: 1.25
   lanePos: 0
   spawner: {fileID: 4872001559470216950}
   arrow: {fileID: 3435391636580323764, guid: ec9c2b74a0dc32040b0dc09688273eb0, type: 3}
