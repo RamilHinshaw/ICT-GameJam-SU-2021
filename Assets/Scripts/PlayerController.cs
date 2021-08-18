@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
 
 
-    
+
 
     //jUMP
     [Header("Jump")]
@@ -52,7 +52,10 @@ public class PlayerController : MonoBehaviour
     [Header("Knocked Down")]
     private float knockoutTimer = 1.0f;
     private bool isKnockedOut = false;
-
+    public float invincibilityMaxTimer = 1.25f;
+    private bool isInvincible = false;
+    private float invincibilityCurrentTimer = 0.0f;
+    
 
     [Header("OTHER")]
     public int lanePos = 0;
@@ -110,10 +113,10 @@ public class PlayerController : MonoBehaviour
 
         //Animation from speed
         //if (isKnockedOut)
-            //anim_mage.speed = anim_ranger.speed = 1f;
+        //anim_mage.speed = anim_ranger.speed = 1f;
 
         //else
-            anim_mage.speed = anim_ranger.speed = currentSpeed * .5f;
+        anim_mage.speed = anim_ranger.speed = currentSpeed * .5f;
 
 
         //Slashing countdown
@@ -127,7 +130,7 @@ public class PlayerController : MonoBehaviour
             if (knockoutTimer <= 0)
                 isKnockedOut = false;
         }
-        
+
 
         //PERK REGEN HEALTH
         if (PlayerStats.regenHealthIfNotHit && health < 5)
@@ -140,6 +143,14 @@ public class PlayerController : MonoBehaviour
                 GameManager.Instance.GuiManager.UpdateHealth(health);
                 regenHealthTimer = regenHealthMaxTimer;
             }
+        }
+
+        if (isInvincible)
+        {
+            invincibilityCurrentTimer -= Time.deltaTime;
+
+            if (invincibilityCurrentTimer <= 0)
+                isInvincible = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Slash))
@@ -156,12 +167,12 @@ public class PlayerController : MonoBehaviour
 
     public void UpdateProgressGUI()
     {
-        GameManager.Instance.GuiManager.UpdateSliders(shieldCD-shieldCurrentCD, arrowCD-arrowCurrentCD, slashCD-slashCurrentCD);
+        GameManager.Instance.GuiManager.UpdateSliders(shieldCD - shieldCurrentCD, arrowCD - arrowCurrentCD, slashCD - slashCurrentCD);
     }
 
     private void Movement()
     {
-  
+
 
         if (currentSpeed < topSpeed)
             currentSpeed += acceleration * Time.deltaTime;
@@ -177,7 +188,7 @@ public class PlayerController : MonoBehaviour
         //Slash
         if (Input.GetButtonDown("Slash") && slashCurrentCD <= 0)
         {
-            
+
 
             slashObj.Activate();
 
@@ -217,7 +228,7 @@ public class PlayerController : MonoBehaviour
                 knightSword.transform.localScale = new Vector3(1.57f, 1.57f, 1.57f);
             }
         }
-        
+
     }
 
     private void Shield()
@@ -253,7 +264,7 @@ public class PlayerController : MonoBehaviour
         if (shieldOn == false && shieldCurrentCD > 0)
             shieldCurrentCD -= Time.deltaTime;
 
-        
+
     }
 
     private void Arrow()
@@ -279,7 +290,7 @@ public class PlayerController : MonoBehaviour
             arrowCurrentCD -= Time.deltaTime;
 
         //if (GameManager.Instance.isCSVLogging)
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -313,6 +324,8 @@ public class PlayerController : MonoBehaviour
                 health--;
                 isKnockedOut = true;
                 knockoutTimer = 0.75f;
+                isInvincible = true;
+                invincibilityCurrentTimer = invincibilityMaxTimer;
 
                 //PERK
                 if (PlayerStats.regenHealthIfNotHit)
@@ -378,7 +391,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y > FLOOR_HEIGHT)
         {
             yVelocity -= fallSpeed * Time.deltaTime;
-        }        
+        }
 
         //If touches ground
         if (yVelocity <= 0 && (transform.position.y <= FLOOR_HEIGHT))
@@ -452,7 +465,7 @@ public class PlayerController : MonoBehaviour
 
         GameManager.Instance.GuiManager.ShowDeathScreen();
 
- 
+
     }
 
     private void CompletedLevel()
