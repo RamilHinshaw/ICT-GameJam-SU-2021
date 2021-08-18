@@ -6895,6 +6895,7 @@ MonoBehaviour:
   sfx_shield: {fileID: 8300000, guid: 1b5113dcd32335c42afc6a726b5f677b, type: 3}
   sfx_arrow: {fileID: 8300000, guid: 28f1dbedd2bba1d4e88ff4a49e0dffb3, type: 3}
   sfx_sword: {fileID: 8300000, guid: 17800dd9c5594e949b98e60d05ec845b, type: 3}
+  sfx_notifiyAbility: {fileID: 8300000, guid: dc3b7532576998a448ae0f93acb03af7, type: 3}
 --- !u!65 &4872001559436779390
 BoxCollider:
   m_ObjectHideFlags: 0

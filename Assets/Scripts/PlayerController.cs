@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //using UnityEditor.Animations;
 using Enums;
+using XInputDotNetPure;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,12 +30,14 @@ public class PlayerController : MonoBehaviour
     [Header("Arrow")]
     public float arrowCD = 1.0f;
     public float arrowCurrentCD = 0.50f;
+    private float arrowPrevCD = 0.50f;
     public int arrowCount = 5;
     public int arrowMaxCount = 5;
 
     [Header("Shield")]
     public GameObject shieldOBJ;
     public float shieldCD = 5.0f;
+    private float shieldPrevCD = 0;
     public float shieldCurrentCD = 0;
     public float shieldMaxDuration = 5f;
     private float shieldDuration;
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
     public Slash slashObj;
     public float slashCD = 1.0f;
     public float slashCurrentCD = 0.50f;
+    private float slashPrevCD = 0.50f;
 
     public bool isSlashing = false;
     public float timerSlash = 0.0f;
@@ -78,10 +82,15 @@ public class PlayerController : MonoBehaviour
 
     [Header("AUDIO")]
     public AudioClip sfx_jump, sfx_pickup;
-    public AudioClip sfx_hurt, sfx_shield, sfx_arrow, sfx_sword;
+    public AudioClip sfx_hurt, sfx_shield, sfx_arrow, sfx_sword, sfx_notifiyAbility;
     private AudioSource audioSource;
 
     private Vector3 startCenterPos;
+
+    //Vibration
+    PlayerIndex playerIndex;
+    GamePadState state;
+    GamePadState prevState;
 
 
 
@@ -93,6 +102,14 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         GameManager.Instance.player = this;
+    }
+
+    private void FixedUpdate()
+    { 
+        if (isKnockedOut)
+            GamePad.SetVibration(playerIndex, 1.0f, 1.0f);
+        else
+            GamePad.SetVibration(playerIndex, 0.0f, 0.0f);
     }
 
     // Update is called once per frame
@@ -214,10 +231,18 @@ public class PlayerController : MonoBehaviour
             audioSource.PlayOneShot(sfx_sword);
         }
 
-        //Cooldowns
         if (slashCurrentCD > 0)
+        {
             slashCurrentCD -= Time.deltaTime;
 
+            if (slashCurrentCD <= 0 && slashPrevCD != slashCurrentCD)
+            {
+                audioSource.PlayOneShot(sfx_notifiyAbility);
+                slashPrevCD = slashCurrentCD;
+            }
+        }
+
+        //If in slash mode change size!
         if (isSlashing == true)
         {
             timerSlash -= Time.deltaTime;
@@ -260,9 +285,16 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //Cooldowns
-        if (shieldOn == false && shieldCurrentCD > 0)
+        if (shieldCurrentCD > 0 && shieldOn == false)
+        {
             shieldCurrentCD -= Time.deltaTime;
+
+            if (shieldCurrentCD <= 0 && shieldPrevCD != shieldCurrentCD)
+            {
+                audioSource.PlayOneShot(sfx_notifiyAbility);
+                shieldPrevCD = shieldCurrentCD;
+            }
+        }
 
 
     }
@@ -287,9 +319,15 @@ public class PlayerController : MonoBehaviour
 
         //Cooldowns
         if (arrowCurrentCD > 0)
+        {
             arrowCurrentCD -= Time.deltaTime;
 
-        //if (GameManager.Instance.isCSVLogging)
+            if (arrowCurrentCD <= 0 && arrowPrevCD != arrowCurrentCD)
+            {
+                audioSource.PlayOneShot(sfx_notifiyAbility);
+                arrowPrevCD = arrowCurrentCD;
+            }
+        }
 
     }
 
