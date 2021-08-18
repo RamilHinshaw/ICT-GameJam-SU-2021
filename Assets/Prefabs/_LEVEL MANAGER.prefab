@@ -126,8 +126,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562361024613738664}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.5751, z: -483.7}
-  m_LocalScale: {x: 1, y: 2.1503, z: 810.5263}
+  m_LocalPosition: {x: 0, y: -0.5751, z: -653.4}
+  m_LocalScale: {x: 1, y: 2.1503, z: 2321.6714}
   m_Children: []
   m_Father: {fileID: 4872001557845820687}
   m_RootOrder: 0
@@ -190,7 +190,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562361024613738664}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1939,7 +1939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be08760b97c8f3746a8affc77f726b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.5
+  lifeTime: 0.75
   hitbox: {fileID: 1562361024613738664}
 --- !u!1 &4872001557920375883
 GameObject:
@@ -4876,6 +4876,21 @@ MonoBehaviour:
   OnLoad:
     m_PersistentCalls:
       m_Calls: []
+  OnRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4872001558664239554}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RecordTelemetryData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &4872001558664239553
 AudioSource:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class LoadScene : MonoBehaviour
 
     //public bool resetTimeScale;
 
-    public UnityEvent OnLoad;
+    public UnityEvent OnLoad, OnRestart;
 
     //Put this in a global setting later (whenever its we make it)
     void Awake() { Application.targetFrameRate = 60; }
@@ -63,6 +63,7 @@ public class LoadScene : MonoBehaviour
 
     public void ReloadScene()
     {
+        OnRestart.Invoke();
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
