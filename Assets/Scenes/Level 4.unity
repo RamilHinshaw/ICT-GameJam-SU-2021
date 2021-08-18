@@ -1062,7 +1062,7 @@ MonoBehaviour:
       right: 2
       weight: 3
       randomize: 1
-    numberOfLanes: 10
+    numberOfLanes: 5
     spaceBetweenLanes: 6
   - name: Hard
     lanes:
@@ -1313,89 +1313,6 @@ MonoBehaviour:
       randomize: 1
     numberOfLanes: 2
     spaceBetweenLanes: 5
-  - name: Medium
-    lanes:
-    - left: 0
-      middle: 2
-      right: 2
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 0
-      middle: 2
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 2
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 1
-      weight: 2
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 3
-      weight: 7
-      randomize: 1
-    - left: 2
-      middle: 2
-      right: 2
-      weight: 3
-      randomize: 1
-    numberOfLanes: 10
-    spaceBetweenLanes: 4
-  - name: Hard
-    lanes:
-    - left: 3
-      middle: 3
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 3
-      middle: 3
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 3
-      middle: 1
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 2
-      middle: 3
-      right: 3
-      weight: 2
-      randomize: 1
-    - left: 1
-      middle: 1
-      right: 2
-      weight: 3
-      randomize: 1
-    - left: 1
-      middle: 1
-      right: 1
-      weight: 2
-      randomize: 1
-    numberOfLanes: 2
-    spaceBetweenLanes: 6
   generatedTrack: []
   obstaclePrefabs:
   - {fileID: 0}

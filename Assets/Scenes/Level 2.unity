@@ -16402,75 +16402,6 @@ MonoBehaviour:
       randomize: 1
     numberOfLanes: 7
     spaceBetweenLanes: 6
-  - name: Easy
-    lanes:
-    - left: 0
-      middle: 0
-      right: 0
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 4
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 2
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 2
-      weight: 8
-      randomize: 1
-    numberOfLanes: 7
-    spaceBetweenLanes: 3
   - name: Medium
     lanes:
     - left: 0
@@ -16519,7 +16450,56 @@ MonoBehaviour:
       weight: 3
       randomize: 1
     numberOfLanes: 5
-    spaceBetweenLanes: 6
+    spaceBetweenLanes: 5
+  - name: Medium
+    lanes:
+    - left: 0
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 0
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 1
+      weight: 7
+      randomize: 1
+    - left: 4
+      middle: 2
+      right: 3
+      weight: 7
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 1
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 3
+      weight: 2
+      randomize: 1
+    - left: 2
+      middle: 2
+      right: 2
+      weight: 3
+      randomize: 1
+    numberOfLanes: 5
+    spaceBetweenLanes: 5
   - name: Hard
     lanes:
     - left: 3
@@ -16552,8 +16532,8 @@ MonoBehaviour:
       right: 1
       weight: 2
       randomize: 1
-    numberOfLanes: 1
-    spaceBetweenLanes: 4
+    numberOfLanes: 2
+    spaceBetweenLanes: 5
   - name: Medium
     lanes:
     - left: 0
@@ -16602,7 +16582,7 @@ MonoBehaviour:
       weight: 3
       randomize: 1
     numberOfLanes: 4
-    spaceBetweenLanes: 6
+    spaceBetweenLanes: 4
   - name: Easy
     lanes:
     - left: 0
@@ -16672,75 +16652,40 @@ MonoBehaviour:
       randomize: 1
     numberOfLanes: 5
     spaceBetweenLanes: 6
-  - name: Easy
+  - name: Hard
     lanes:
-    - left: 0
-      middle: 0
-      right: 0
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 4
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
+    - left: 3
+      middle: 3
       right: 3
       weight: 1
       randomize: 1
-    - left: 0
-      middle: 4
+    - left: 3
+      middle: 3
+      right: 1
+      weight: 1
+      randomize: 1
+    - left: 3
+      middle: 1
       right: 1
       weight: 3
       randomize: 1
-    - left: 0
-      middle: 4
+    - left: 2
+      middle: 3
       right: 3
+      weight: 2
+      randomize: 1
+    - left: 1
+      middle: 1
+      right: 2
       weight: 3
       randomize: 1
-    - left: 4
-      middle: 4
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 4
-      middle: 4
+    - left: 1
+      middle: 1
       right: 1
-      weight: 3
+      weight: 2
       randomize: 1
-    - left: 0
-      middle: 0
-      right: 2
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 2
-      weight: 8
-      randomize: 1
-    numberOfLanes: 10
-    spaceBetweenLanes: 3
+    numberOfLanes: 2
+    spaceBetweenLanes: 5
   - name: Medium
     lanes:
     - left: 0
@@ -16789,7 +16734,7 @@ MonoBehaviour:
       weight: 3
       randomize: 1
     numberOfLanes: 2
-    spaceBetweenLanes: 7
+    spaceBetweenLanes: 5
   - name: Hard
     lanes:
     - left: 3
@@ -16823,7 +16768,7 @@ MonoBehaviour:
       weight: 2
       randomize: 1
     numberOfLanes: 2
-    spaceBetweenLanes: 8
+    spaceBetweenLanes: 5
   - name: Medium
     lanes:
     - left: 0
@@ -62657,6 +62602,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 4872001558164806991, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.4763184
+      objectReference: {fileID: 0}
     - target: {fileID: 4872001558166787950, guid: 0811f23bdfefbf44a88e3c42c992e76b,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -62681,6 +62631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BackGroundColor.r
       value: 0.48235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872001558257624247, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.4763184
       objectReference: {fileID: 0}
     - target: {fileID: 4872001558354524413, guid: 0811f23bdfefbf44a88e3c42c992e76b,
         type: 3}
@@ -62713,6 +62668,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872001559345439684, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.4763184
       objectReference: {fileID: 0}
     - target: {fileID: 4872001559396118751, guid: 0811f23bdfefbf44a88e3c42c992e76b,
         type: 3}

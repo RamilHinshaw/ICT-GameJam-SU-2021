@@ -9525,7 +9525,7 @@ MonoBehaviour:
       right: 2
       weight: 8
       randomize: 1
-    numberOfLanes: 10
+    numberOfLanes: 5
     spaceBetweenLanes: 6
   - name: Easy
     lanes:
@@ -9763,144 +9763,6 @@ MonoBehaviour:
       randomize: 1
     numberOfLanes: 5
     spaceBetweenLanes: 6
-  - name: Easy
-    lanes:
-    - left: 0
-      middle: 0
-      right: 0
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 4
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 2
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 2
-      weight: 8
-      randomize: 1
-    numberOfLanes: 7
-    spaceBetweenLanes: 6
-  - name: Easy
-    lanes:
-    - left: 0
-      middle: 0
-      right: 0
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 4
-      weight: 5
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 4
-      weight: 7
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 1
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 3
-      weight: 3
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 3
-      weight: 1
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 1
-      weight: 3
-      randomize: 1
-    - left: 0
-      middle: 0
-      right: 2
-      weight: 1
-      randomize: 1
-    - left: 0
-      middle: 4
-      right: 2
-      weight: 5
-      randomize: 1
-    - left: 4
-      middle: 4
-      right: 2
-      weight: 8
-      randomize: 1
-    numberOfLanes: 7
-    spaceBetweenLanes: 3
   generatedTrack: []
   obstaclePrefabs:
   - {fileID: 0}
@@ -9909,7 +9771,9 @@ MonoBehaviour:
   - {fileID: 6388939140754811867, guid: 4978b27ba5ee9e6498cf61716d1cd3c6, type: 3}
   - {fileID: 6192690515352653396, guid: 5d2bc67b09219f24cb349c2fb1b47972, type: 3}
   ignoreTrack: 0
+  ignoreTextureScaling: 0
   endZone: {fileID: 5126051667296546888, guid: f7cef7edcbd41af44926a1c50111b268, type: 3}
+  textureScaleMultiplier: 1
 --- !u!4 &1337533148
 Transform:
   m_ObjectHideFlags: 0
@@ -10564,7 +10428,9 @@ MonoBehaviour:
   generatedTrack: []
   obstaclePrefabs: []
   ignoreTrack: 0
+  ignoreTextureScaling: 0
   endZone: {fileID: 0}
+  textureScaleMultiplier: 1
 --- !u!4 &1438533884
 Transform:
   m_ObjectHideFlags: 0
