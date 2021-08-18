@@ -16,6 +16,8 @@ public class GuiManager : MonoBehaviour
 
     public PerkCardGUI cardMage, cardRanger, cardKnight;
 
+    public RawImage iconArrow, iconShield, iconSword;
+
     public void Start()
     {
         levelName.text = SceneManager.GetActiveScene().name;
@@ -78,6 +80,13 @@ public class GuiManager : MonoBehaviour
     {
         //RecordTelemetryData();
         screen_death.SetActive(true);
+    }
+
+    public void UpdatePerkIcons(float shieldCurrCD, float rangerCurrCD, float knightCurrCD)
+    {
+        iconShield.color = (shieldCurrCD<=0)? Color.white : new Color(0.33f, 0.33f, 0.33f);
+        iconSword.color = (knightCurrCD <= 0) ? Color.white : new Color(0.33f, 0.33f, 0.33f);
+        iconArrow.color = (rangerCurrCD <= 0) ? Color.white : new Color(0.33f, 0.33f, 0.33f);
     }
 
 }

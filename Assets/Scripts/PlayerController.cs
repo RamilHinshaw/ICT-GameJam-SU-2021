@@ -179,6 +179,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Slash))
             CompletedLevel();
+
+        GameManager.Instance.GuiManager.UpdatePerkIcons(shieldCurrentCD, arrowCurrentCD, slashCurrentCD);
     }
 
     public void SwordCdReduce()
