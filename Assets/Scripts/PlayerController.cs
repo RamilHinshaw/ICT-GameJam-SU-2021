@@ -295,7 +295,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isDisabled) return;
+        if (isDisabled || isInvincible) return;
 
         //Lose Speed
         if (other.CompareTag("Obstacle"))
