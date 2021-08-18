@@ -6864,16 +6864,16 @@ MonoBehaviour:
   acceleration: 1.4
   accelerationReduction: 100
   arrowCD: 0.5
-  arrowCurrentCD: 0.5
+  arrowCurrentCD: 0
   arrowCount: 5
   arrowMaxCount: 5
   shieldOBJ: {fileID: 4872001559028280264}
   shieldCD: 6
-  shieldCurrentCD: 6
+  shieldCurrentCD: 0
   shieldMaxDuration: 0.5
   slashObj: {fileID: 4872001557845820675}
   slashCD: 1.85
-  slashCurrentCD: 1.85
+  slashCurrentCD: 0
   isSlashing: 0
   timerSlash: 2
   knightSword: {fileID: 4872001558033248901}
