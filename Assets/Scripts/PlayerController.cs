@@ -102,6 +102,8 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         GameManager.Instance.player = this;
+
+        shieldCurrentCD = 0;
     }
 
     private void FixedUpdate()
@@ -110,6 +112,11 @@ public class PlayerController : MonoBehaviour
             GamePad.SetVibration(playerIndex, 1.0f, 1.0f);
         else
             GamePad.SetVibration(playerIndex, 0.0f, 0.0f);
+    }
+
+    private void OnDisable()
+    {
+        GamePad.SetVibration(playerIndex, 0.0f, 0.0f);
     }
 
     // Update is called once per frame
