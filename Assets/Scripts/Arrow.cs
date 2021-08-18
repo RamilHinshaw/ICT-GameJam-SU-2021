@@ -7,6 +7,7 @@ public class Arrow : MonoBehaviour
     public float lifeTime = 5f;
     public float speed = 4f;
     public int piercing = 0;
+    private bool hasHit = false;
 
     // Update is called once per frame
     private void Start()
@@ -67,7 +68,9 @@ public class Arrow : MonoBehaviour
 
         else if (other.transform.CompareTag("Boss"))
         {
-            other.GetComponent<Boss>().Damage();
+            if (hasHit == false)
+                other.GetComponent<Boss>().Damage();
+            hasHit = true;
             Destroy(gameObject);
         }
     }

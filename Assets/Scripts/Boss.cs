@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour
 
     [Header("Setup")]
     public Animator anim;
-    public AudioSource audioSource, gameManagerAudioSource;
+    public AudioSource audioSource, gameManagerAudioSource, AS_dragonDeath;
     public GameObject spawner;
     public GameObject projectile, explosion;
     public AudioClip sfx_fireball, sfx_damaged, sfx_death;
@@ -37,6 +37,15 @@ public class Boss : MonoBehaviour
     private int targetLane;
 
     private bool enraged = false;
+    private int enragedAttackCounter = 0;
+    private int enragedTargetAttackCounter = 0;
+    public int minEnragedAttack = 3;
+    public int maxEnragedAttack = 20;
+    public float enragedCooldown = 6f;
+    private float enragedCurrentCooldown = 0f;
+    public Renderer rend;
+    public Material normalMat, enragedMat;
+    public GameObject glowBody, body;
 
     public enum Behavior
     {
@@ -59,6 +68,14 @@ public class Boss : MonoBehaviour
         ui_healthSlider.value = health;
 
         startHealth = health;
+        Telemetry.bossHealth = (int)startHealth;
+
+        //for (int i = 0; i < rend.materials.Length; i++)
+        //{
+        //    print(rend.materials[i].name);
+        //}
+
+        print(rend.materials[3].name);
     }
 
     // Update is called once per frame
@@ -85,6 +102,9 @@ public class Boss : MonoBehaviour
             default:
                 break;
         }
+
+        if (enragedCurrentCooldown > 0)
+            enragedCurrentCooldown -= Time.deltaTime;
     }
 
     private void Idle()
@@ -121,37 +141,81 @@ public class Boss : MonoBehaviour
 
     private void Attack()
     {
+
         timer -= Time.deltaTime;
 
         if (timer >= 0) return;
         //WAIT FOR ATTACK DELAY!
-        
+
         anim.SetTrigger("attack");
 
         //Spawn Prefab
+        if (enraged)
+            enragedAttackCounter++;
+
         Instantiate(projectile, spawner.transform.position, spawner.transform.rotation);
         audioSource.PlayOneShot(sfx_fireball);
 
+
+        //if (enraged)
+        //    return;
+
         //IF HALF HEALTH ATTACK MULTIPLE TIMES!
-        if ( (health/startHealth) <= 0.5f && Random.value < 0.55f)
+        if ( (health/startHealth) <= 0.5f && Random.value < 0.55f && enraged == false && enragedCurrentCooldown <= 0f)
         {
             enraged = true;
-            print("MULTI HIT!");
-            timer = (attackDelay/2) * CurrentDifficulty();
+            //rend.materials[3] = enragedMat;
+            //rend.materials[3].SetColor("_EmissionColor", new Color(.75f, .141f, .188f, 0.1472708f));
+            //rend.materials[3].EnableKeyword("Emmision");
+            rend.materials[3].EnableKeyword("Emmision");
+            glowBody.SetActive(true);
+            body.SetActive(false);
+
+            audioSource.PlayOneShot(sfx_death);
+            timer = 1.75f;
+
+            enragedAttackCounter = 0;
+
+            enragedTargetAttackCounter = (int) Random.Range(minEnragedAttack + (maxEnragedAttack * (1 - (health / startHealth))) / 3, maxEnragedAttack * (1 - (health / startHealth)));
+
+        }
+
+        if (enraged && enragedAttackCounter < enragedTargetAttackCounter)
+        {
+            timer -= Time.deltaTime; //Wait to go crazy!
+
+            if (timer > 0) return;
+
+
+            print("ENRAGED ATTACK!");
+            timer = (attackDelay / 2) * CurrentDifficulty();
             targetLane = Random.Range(-1, 2);
             behavior = Behavior.MoveToLane;
             return;
         }
 
-        //Switch to IDLE!
-        timer = Random.Range(.15f * CurrentDifficulty(), maxIdleTimer * CurrentDifficulty() );
 
-        if (enraged == true)
+        else if (enraged == true)
         {
             enraged = false;
-            timer *= 2.5f;
+            //rend.materials[3] = normalMat;
+            rend.materials[3].DisableKeyword("Emmision");
+            glowBody.SetActive(false);
+            body.SetActive(true);
+
+            enragedCurrentCooldown = (enragedCooldown * CurrentDifficulty()) * 2f;
+
+            //Wait time and idle longer
+            timer = Random.Range(.15f * CurrentDifficulty(), maxIdleTimer * CurrentDifficulty());
+            behavior = Behavior.Idle;
+            timer *= 2f;
+            return;
         }
 
+
+
+        //Switch to IDLE!
+        timer = Random.Range(.15f * CurrentDifficulty(), maxIdleTimer * CurrentDifficulty());
         behavior = Behavior.Idle;
     }
 
@@ -198,6 +262,7 @@ public class Boss : MonoBehaviour
     {
         //Lower Health
         health--;
+        Telemetry.bossHealth = (int)health;
         ui_healthSlider.value = health;
         audioSource.PlayOneShot(sfx_damaged);
         Instantiate(explosion, spawner.transform.position, transform.rotation);
@@ -215,12 +280,15 @@ public class Boss : MonoBehaviour
         GameManager.Instance.player.currentSpeed = 0;
         GameManager.Instance.player.DisableAnim();
 
-        audioSource.PlayOneShot(sfx_death);
+    
         gameManagerAudioSource.Stop();
         gameManagerAudioSource.clip = music_fanfare;
         gameManagerAudioSource.Play();
         ui_completionScreen.SetActive(true);
         gameObject.SetActive(false);
+
+        AS_dragonDeath.enabled = true;
+
     }
 
 
