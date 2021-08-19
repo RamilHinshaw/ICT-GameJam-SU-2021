@@ -106,25 +106,32 @@ public class PlayerController : MonoBehaviour
         shieldCurrentCD = 0;
     }
 
-    private void FixedUpdate()
-    { 
-        if (isKnockedOut)
-            GamePad.SetVibration(playerIndex, 1.0f, 1.0f);
-        else
-            GamePad.SetVibration(playerIndex, 0.0f, 0.0f);
-    }
-
     private void OnDisable()
     {
         GamePad.SetVibration(playerIndex, 0.0f, 0.0f);
     }
+
+
+    private void FixedUpdate()
+    { 
+
+        if (isKnockedOut)
+            GamePad.SetVibration(playerIndex, 1.0f, 1.0f);
+        else
+            GamePad.SetVibration(playerIndex, 0.0f, 0.0f);
+
+        if (isDisabled) return;
+
+        Movement();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         if (isDisabled) return;
 
-        Movement();
+
         ChangeLanes();
         Jump();
 

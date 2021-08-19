@@ -24,7 +24,7 @@ public class Slash : MonoBehaviour
         float scaling = 0;
 
         if (PlayerStats.swordSizeIncrease == true && GameManager.Instance.player.yVelocity != 0)
-            scaling = 30f;
+            scaling = 15f;
 
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, SCALE_HITBOX + (SCALE_HITBOX * scaling));
         hitbox.SetActive(true);

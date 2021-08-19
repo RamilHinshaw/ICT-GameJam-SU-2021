@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 4.75
-  speed: 20
+  speed: 15.41
   piercing: 0
 --- !u!65 &1292874374403258993
 BoxCollider:
@@ -340,8 +340,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1896906, y: 1, z: 1}
-  m_Center: {x: 0.18851803, y: 0, z: 0}
+  m_Size: {x: 0.2681603, y: 1, z: 1}
+  m_Center: {x: 0.20920202, y: 0, z: 0}
 --- !u!65 &4995770051376179405
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -353,8 +353,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19584422, y: 1, z: 1}
-  m_Center: {x: -0.10017911, y: 0, z: 0}
+  m_Size: {x: 0.3172961, y: 1, z: 1}
+  m_Center: {x: -0.09364485, y: 0, z: 0}
 --- !u!65 &222277025146244263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -366,8 +366,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.26893324, y: 1, z: 1}
-  m_Center: {x: -0.45146406, y: 0, z: 0}
+  m_Size: {x: 0.3097501, y: 1, z: 1}
+  m_Center: {x: -0.43105543, y: 0, z: 0}
 --- !u!1 &3936478880588347603
 GameObject:
   m_ObjectHideFlags: 0

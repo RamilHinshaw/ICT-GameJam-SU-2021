@@ -3267,6 +3267,18 @@ Transform:
   m_Father: {fileID: 1221978075}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &271654906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4872001558664239554, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4872001558254806854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25db86c86f06cb74fad17eb8342f0a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &277038032
 GameObject:
   m_ObjectHideFlags: 0
@@ -22839,7 +22851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   startSpeed: 3
-  maxSpeed: 19
+  maxSpeed: 17
   attackDelay: 0.4
   maxIdleTimer: 3
   difficultyModifier: 0.15
@@ -23461,6 +23473,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872001558664239552, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: OnLoad.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872001558664239552, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: OnLoad.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872001558664239552, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: OnLoad.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 271654906}
+    - target: {fileID: 4872001558664239552, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: OnLoad.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872001558664239552, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: OnLoad.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RecordTelemetryData
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872001558664239552, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: OnLoad.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872001558664239552, guid: 0811f23bdfefbf44a88e3c42c992e76b,
+        type: 3}
+      propertyPath: OnLoad.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4872001558664239553, guid: 0811f23bdfefbf44a88e3c42c992e76b,
         type: 3}

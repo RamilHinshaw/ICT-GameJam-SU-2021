@@ -20,10 +20,15 @@ public class Arrow : MonoBehaviour
         piercing = PlayerStats.arrowPiercing;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         transform.Translate(transform.forward * speed * Time.deltaTime);
 
+
+    }
+
+    private void Update()
+    {
         lifeTime -= Time.deltaTime;
 
         if (lifeTime <= 0)
